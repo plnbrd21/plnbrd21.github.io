@@ -1,69 +1,224 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Я - студент ВШЭ | Бородушкина Полина</title>
+    <style>
+        /* Базовые стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        /* Семантические блоки */
+        header {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #1e3a8a;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #e0e7ff;
+        }
+        
+        main {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        
+        /* Контент */
+        h1 {
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: #1e3a8a;
+            margin: 25px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e7ff;
+        }
+        
+        h3 {
+            color: #374151;
+            margin: 20px 0 10px 0;
+        }
+        
+        .student-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        .student-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 3px solid #e0e7ff;
+        }
+        
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        a {
+            color: #1e3a8a;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #1e3a8a;
+        }
+        
+        .course-badge {
+            display: inline-block;
+            background-color: #1e3a8a;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .student-info {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="ru"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Я - студент ВШЭ&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body { font-family: Arial, sans-serif; margin: 0; padding: 20px; max-width: 800px; margin: auto; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>header, nav, main, footer { margin-bottom: 20px; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>nav ul { list-style: none; padding: 0; display: flex; gap: 20px; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>nav a { text-decoration: none; color: blue; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>img { max-width: 200px; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.required { color: red; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;header&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Бородушкина Полина Андреевна&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;Студентка 4 курса ОП "Прикладная математика" НИУ ВШЭ&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;nav&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;a href="index.html"&gt;Главная&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;a href="feedback.html"&gt;Обратная связь&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;main&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Обо мне&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;img src="https://via.placeholder.com/200x200?text=Фото+студента" alt="Фото студента"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;Я учусь на 4 курсе образовательной программы &lt;strong&gt;"Прикладная математика"&lt;/strong&gt; в &lt;a href="https://www.hse.ru"&gt;НИУ ВШЭ&lt;/a&gt;.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;Мои интересы: математическое моделирование, анализ данных и алгоритмы.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Мои достижения&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;Участник олимпиад по математике&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;Проект по машинному обучению&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;Средний балл: 8.4&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;© 2023 Бородушкина Полина. Студентка НИУ ВШЭ.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;Контакты: &lt;a href="feedback.html"&gt;Форма обратной связи&lt;/a&gt;&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+    <!-- Шапка сайта -->
+    <header>
+        <h1>Бородушкина Полина Андреевна</h1>
+        <p>Студентка 4-го курса НИУ ВШЭ 
+           <span class="course-badge">Прикладная математика</span>
+        </p>
+    </header>
+
+    <!-- Навигация -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="feedback.html">Обратная связь</a></li>
+        </ul>
+    </nav>
+
+    <!-- Основное содержимое -->
+    <main>
+        <!-- Секция: Обо мне -->
+        <section id="about">
+            <h2>Обо мне</h2>
+            <div class="student-info">
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                     alt="Фотография студента" 
+                     class="student-photo">
+                <div>
+                    <p>Привет! Меня зовут Полина. Я учусь на 4 курсе образовательной программы <strong>«Прикладная математика»</strong> в <a href="https://www.hse.ru" target="_blank">Национальном исследовательском университете «Высшая школа экономики»</a>.</p>
+                    <p>Мои академические интересы лежат в области анализа данных, машинного обучения и математического моделирования социальных процессов.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция: Учеба -->
+        <section id="studies">
+            <h2>Моя учеба в ВШЭ</h2>
+            <ul>
+                <li><strong>Факультет:</strong> Факультет компьютерных наук</li>
+                <li><strong>Образовательная программа:</strong> Прикладная математика</li>
+                <li><strong>Статус:</strong> Студент 4-го курса (выпуск 2025 года)</li>
+                <li><strong>Средний балл:</strong> 8.4 (на 3 курсе)</li>
+                <li><strong>Изучаемые дисциплины:</strong> Математический анализ, Линейная алгебра, Теория вероятностей, Программирование на Python</li>
+            </ul>
+            <p>ВШЭ дает не только глубокие теоретические знания, но и уделяет большое внимание <em>практическим навыкам</em> и <em>проектной работе</em>.</p>
+        </section>
+
+        <!-- Секция: Проекты -->
+        <section id="projects">
+            <h2>Учебные проекты</h2>
+            <article>
+                <h3>Анализ данных социальных сетей</h3>
+                <p>В рамках курса "Анализ данных" разработала модель для прогнозирования активности пользователей в социальных сетях.</p>
+            </article>
+            <article>
+                <h3>Веб-приложение для визуализации математических функций</h3>
+                <p>Создала интерактивное веб-приложение на JavaScript для построения графиков сложных математических функций.</p>
+            </article>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <p>© 2023 Бородушкина Полина. Студентка НИУ ВШЭ.</p>
+        <p>Контакты для связи: <a href="feedback.html">Страница обратной связи</a></p>
+        <p><small>Этот сайт является учебным проектом.</small></p>
+    </footer>
 </body>
 </html>
