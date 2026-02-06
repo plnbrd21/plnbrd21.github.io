@@ -1,114 +1,215 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обратная связь | Студент ВШЭ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #1e3a8a;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #e0e7ff;
+        }
+        
+        main {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        
+        h1, h2 {
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        button {
+            background-color: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        
+        button:hover {
+            background-color: #152c6b;
+        }
+        
+        button[type="reset"] {
+            background-color: #666;
+        }
+        
+        .required {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="ru"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Обратная связь&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body { font-family: Arial, sans-serif; margin: 0; padding: 20px; max-width: 800px; margin: auto; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>header, nav, main, footer { margin-bottom: 20px; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>nav ul { list-style: none; padding: 0; display: flex; gap: 20px; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>nav a { text-decoration: none; color: blue; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.form-group { margin-bottom: 15px; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>label { display: block; margin-bottom: 5px; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>input, select, textarea { width: 100%; padding: 8px; box-sizing: border-box; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.required { color: red; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;header&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Обратная связь&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;Свяжитесь со мной&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;nav&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;a href="index.html"&gt;Главная&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;a href="feedback.html"&gt;Обратная связь&lt;/a&gt;&lt;/li&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;main&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Форма обратной связи&lt;/h2&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;form id="feedback-form"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;label for="name"&gt;Имя: &lt;span class="required"&gt;*&lt;/span&gt;&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;input type="text" id="name" name="name" required&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;label for="email"&gt;Email: &lt;span class="required"&gt;*&lt;/span&gt;&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;input type="email" id="email" name="email" required&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;label for="topic"&gt;Тема сообщения:&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;select id="topic" name="topic"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;option value=""&gt;Выберите тему&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;option value="study"&gt;Вопрос об учебе&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;option value="project"&gt;Предложение по проекту&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;option value="other"&gt;Другое&lt;/option&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/select&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;label for="message"&gt;Сообщение: &lt;span class="required"&gt;*&lt;/span&gt;&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;textarea id="message" name="message" rows="5" required&gt;&lt;/textarea&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button type="submit"&gt;Отправить&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;button type="reset"&gt;Очистить&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/form&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;small&gt;&lt;span class="required"&gt;*&lt;/span&gt; - обязательные поля для заполнения&lt;/small&gt;&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;© 2023 Бородушкина Полина. Студентка НИУ ВШЭ.&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;a href="index.html"&gt;На главную&lt;/a&gt;&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>// Простая обработка формы без отправки на сервер</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('feedback-form').addEventListener('submit', function(event) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>event.preventDefault(); // Предотвращаем реальную отправку</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Проверяем заполнение обязательных полей</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const name = document.getElementById('name').value.trim();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const email = document.getElementById('email').value.trim();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const message = document.getElementById('message').value.trim();</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (!name || !email || !message) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>alert('Пожалуйста, заполните все обязательные поля');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>return;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>// Форма "отправлена" успешно</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>alert('Сообщение отправлено! (В реальном проекте здесь была бы отправка на сервер)');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>this.reset(); // Очищаем форму</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+    <header>
+        <h1>Форма обратной связи</h1>
+        <p>Свяжитесь со мной</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="feedback.html">Обратная связь</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Отправьте сообщение</h2>
+            <form id="feedback-form">
+                <div class="form-group">
+                    <label for="name">Ваше имя: <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Ваш email: <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="topic">Тема сообщения:</label>
+                    <select id="topic" name="topic">
+                        <option value="">Выберите тему</option>
+                        <option value="study">Вопрос об учебе в ВШЭ</option>
+                        <option value="project">Предложение по проекту</option>
+                        <option value="consult">Консультация</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Сообщение: <span class="required">*</span></label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="subscribe">
+                        Хочу получать ответ на email
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Отправить</button>
+                    <button type="reset">Очистить</button>
+                </div>
+                
+                <p><span class="required">*</span> - обязательные поля</p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Бородушкина Полина. Студентка НИУ ВШЭ.</p>
+        <p><a href="index.html">Вернуться на главную</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('feedback-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (!name || !email || !message) {
+                alert('Пожалуйста, заполните все обязательные поля');
+                return;
+            }
+            
+            alert('Сообщение отправлено! (В учебных целях)');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
