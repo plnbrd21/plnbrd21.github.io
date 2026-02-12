@@ -85,7 +85,7 @@
         
         h1 { font-size: 2em; }
         h2 { font-size: 1.75em; color: #1e3a8a; border-bottom: 2px solid #e0e7ff; padding-bottom: 10px; margin: 25px 0 15px; }
-        h3 { font-size: 1.5em; color: #374151; margin: 20px 0 10px; }
+        h3 { font-size: 1.5em; color: #d2d4d9; margin: 20px 0 10px; }
         h4 { font-size: 1.25em; color: #4b5563; margin: 15px 0 8px; }
         h5 { font-size: 1.1em; color: #6b7280; margin: 12px 0 6px; }
         h6 { font-size: 1em; color: #9ca3af; margin: 10px 0 4px; }
@@ -490,31 +490,20 @@
             <!-- Видео -->
             <h3>Видео-презентация:</h3>
             <video width="400" controls poster="poster.jpg">
-                <source src="IMG_7736.mov" type="video/mov">
-                <track kind="subtitles" src="IMG_7736.vtt" srclang="ru" label="Русский">
+                <source src="images/video.mp4" type="video/mp4">
+                <track kind="subtitles" src="video.vtt" srclang="ru" label="Русский">
                 Ваш браузер не поддерживает видео.
             </video>
             
-            <!-- Карта изображений -->
-            <h3>Карта изображений:</h3>
-            <img src="images/campus-map.webp" alt="Карта кампуса" usemap="#campusmap" width="400" height="300">
-            <map name="campusmap">
-                <area shape="rect" coords="0,0,100,100" href="https://www.hse.ru/ba/miem/" alt="МИЭМ" title="МИЭМ">
-                <area shape="circle" coords="200,150,50" href="https://library.hse.ru/" alt="Библиотека" title="Библиотека">
-                <area shape="poly" coords="300,200,350,200,325,250" href="https://dorm.hse.ru/" alt="Общежитие" title="Общежитие">
-            </map>
-            
             <!-- Picture с разными разрешениями -->
-            <h3>Адаптивное изображение:</h3>
+            <h3>Корпуса:</h3>
             <picture>
-                <source media="(min-width: 800px)" srcset="images/campus-small.jpg">
-                <source media="(min-width: 400px)" srcset="images/campus-small.jpg">
                 <img src="images/campus-small.jpg" alt="Кампусы ВШЭ" style="width:100%;">
             </picture>
 
         <!-- Секция: Семантические элементы -->
         <section id="semantic">
-            <h2>Семантическая разметка</h2>
+            <h2>Исследования</h2>
             
             <!-- Article -->
             <article>
