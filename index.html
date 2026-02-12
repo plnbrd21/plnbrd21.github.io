@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://plnbrd21.github.io/">
     <title>Я - студент ВШЭ | Бородушкина Полина</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Сайт-портфолио студентки ВШЭ Полины Бородушкиной">
+    <meta name="keywords" content="ВШЭ, МИЭМ, прикладная математика, студент, портфолио">
+    <meta name="author" content="Бородушкина Полина">
     <style>
-        /* Базовые стили */
         * {
             margin: 0;
             padding: 0;
@@ -22,7 +26,6 @@
             background-color: #f5f5f5;
         }
         
-        /* Семантические блоки */
         header {
             background-color: #1e3a8a;
             color: white;
@@ -76,22 +79,16 @@
             margin-top: 20px;
         }
         
-        /* Контент */
-        h1 {
+        h1, h2, h3, h4, h5, h6 {
             margin-bottom: 10px;
         }
         
-        h2 {
-            color: #1e3a8a;
-            margin: 25px 0 15px 0;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e0e7ff;
-        }
-        
-        h3 {
-            color: #374151;
-            margin: 20px 0 10px 0;
-        }
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.75em; color: #1e3a8a; border-bottom: 2px solid #e0e7ff; padding-bottom: 10px; margin: 25px 0 15px; }
+        h3 { font-size: 1.5em; color: #374151; margin: 20px 0 10px; }
+        h4 { font-size: 1.25em; color: #4b5563; margin: 15px 0 8px; }
+        h5 { font-size: 1.1em; color: #6b7280; margin: 12px 0 6px; }
+        h6 { font-size: 1em; color: #9ca3af; margin: 10px 0 4px; }
         
         .student-info {
             display: flex;
@@ -125,7 +122,7 @@
             text-decoration: underline;
         }
         
-        strong {
+        strong, b {
             color: #1e3a8a;
         }
         
@@ -139,27 +136,162 @@
             margin-left: 10px;
         }
         
-        @media (max-width: 768px) {
-            .student-info {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-                align-items: center;
-            }
+        .data-grid, .media-grid, .semantic-grid, .table-responsive, .dialog-demo {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+        
+        .badge {
+            background: #1e3a8a;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+        }
+        
+        mark {
+            background-color: #fef08a;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+        
+        time {
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+        
+        hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #1e3a8a;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        
+        figure {
+            margin: 20px 0;
+            padding: 10px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+        
+        figcaption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: 8px;
+        }
+        
+        aside {
+            background: #e0e7ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        details {
+            margin: 15px 0;
+            padding: 10px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+        
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: #1e3a8a;
+        }
+        
+        dialog {
+            padding: 20px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        
+        dialog::backdrop {
+            background: rgba(0,0,0,0.5);
+        }
+        
+        canvas {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .svg-container {
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        svg {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        
+        audio, video {
+            max-width: 100%;
+            margin: 15px 0;
+        }
+        
+        embed, object {
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+        }
+        
+        .fieldset-demo {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
     <!-- Шапка сайта -->
     <header>
-        <h1>Бородушкина Полина Андреевна</h1>
-        <p>Студентка 4-го курса НИУ ВШЭ 
-           <span class="course-badge">Прикладная математика</span>
+        <hgroup>
+            <h1>Бородушкина Полина Андреевна</h1>
+            <h2>Студентка 4-го курса НИУ ВШЭ</h2>
+        </hgroup>
+        <p>
+            Прикладная математика 
+            <span class="course-badge">МИЭМ</span>
+            <span class="badge">Выпуск 2026</span>
         </p>
     </header>
 
@@ -168,6 +300,9 @@
         <ul>
             <li><a href="index.html">Главная</a></li>
             <li><a href="feedback.html">Обратная связь</a></li>
+            <li><a href="#data">Данные</a></li>
+            <li><a href="#media">Медиа</a></li>
+            <li><a href="#semantic">Семантика</a></li>
         </ul>
     </nav>
 
@@ -177,11 +312,28 @@
         <section id="about">
             <h2>Обо мне</h2>
             <div class="student-info">
-                <img src="images/avatar.jpg" 
-                     alt="Фотография студента" 
-                     class="student-photo">
+                <figure>
+                    <img src="images/avatar.jpg" 
+                         alt="Фотография студента" 
+                         class="student-photo"
+                         width="200" 
+                         height="200"
+                         loading="lazy">
+                    <figcaption>Полина Бородушкина, 2026 г.</figcaption>
+                </figure>
                 <div>
-                    <p>Привет! Меня зовут Бородушкина Полина. Я учусь на 4 курсе образовательной программы <strong>«Прикладная математика»</strong> в <a href="https://www.hse.ru" target="_blank">Национальном исследовательском университете «Высшая школа экономики»</a>.</p>
+                    <p>Привет! Меня зовут <strong>Бородушкина Полина</strong>. Я учусь на 4 курсе образовательной программы <b>«Прикладная математика»</b> в <a href="https://www.hse.ru" target="_blank" rel="noopener noreferrer">Национальном исследовательском университете «Высшая школа экономики»</a>.</p>
+                    <p><em>Моя специализация:</em> <i>системный анализ и математическое моделирование</i>.</p>
+                    
+                    <!-- Диалоговое окно (dialog) -->
+                    <dialog id="infoDialog">
+                        <h4>Информация</h4>
+                        <p>Это диалоговое окно создано с помощью тега &lt;dialog&gt;.</p>
+                        <button onclick="document.getElementById('infoDialog').close()">Закрыть</button>
+                    </dialog>
+                    <button onclick="document.getElementById('infoDialog').showModal()">
+                        Показать информацию
+                    </button>
                 </div>
             </div>
         </section>
@@ -189,32 +341,234 @@
         <!-- Секция: Учеба -->
         <section id="studies">
             <h2>Моя учеба в ВШЭ</h2>
+            
+            <h3>Ключевые дисциплины:</h3>
+            <ol type="I">
+                <li>Математический анализ</li>
+                <li>Дифференциальные уравнения</li>
+                <li>Теория вероятностей</li>
+                <li>Численные методы</li>
+            </ol>
+            
+            <h3>Термины:</h3>
+            <dl>
+                <dt>МИЭМ</dt>
+                <dd>Московский институт электроники и математики им. А.Н. Тихонова</dd>
+                <dt>ВШЭ</dt>
+                <dd>Национальный исследовательский университет «Высшая школа экономики»</dd>
+                <dt>НИУ</dt>
+                <dd>Национальный исследовательский университет</dd>
+            </dl>
+            
             <ul>
-                <li><strong>Факультет:</strong> Московский институт электроники и математики имени А.Н. Тихонова </li>
+                <li><strong>Факультет:</strong> МИЭМ им. А.Н. Тихонова</li>
                 <li><strong>Образовательная программа:</strong> Прикладная математика</li>
-                <li><strong>Статус:</strong> Студент 4-го курса (выпуск 2026 года)</li>
-                <li><strong>Средний балл:</strong> 9.33 (на 4 курсе)</li>
+                <li><strong>Статус:</strong> Студент 4-го курса (выпуск <time datetime="2026-06-30">июнь 2026 года</time>)</li>
+                <li><strong>Средний балл:</strong> <data value="9.33">9.33 (на 4 курсе)</data></li>
             </ul>
-            <p>ВШЭ дает не только глубокие теоретические знания, но и уделяет большое внимание <em>практическим навыкам</em> и <em>проектной работе</em>.</p>
+            <p>ВШЭ дает не только глубокие теоретические знания, но и уделяет большое внимание <em>практическим навыкам</em> и <mark>проектной работе</mark>.</p>
+            
+            <!-- Горизонтальная линия -->
+            <hr>
+            
+            <!-- Таблица с полной структурой -->
+            <h3>Успеваемость по семестрам</h3>
+            <table>
+                <caption>Средний балл по семестрам</caption>
+                <colgroup>
+                    <col span="1" style="background-color: #f0f4ff">
+                    <col span="3" style="background-color: white">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">Курс</th>
+                        <th scope="col">1 семестр</th>
+                        <th scope="col">2 семестр</th>
+                        <th scope="col">Средний</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1 курс</th>
+                        <td>8.7</td>
+                        <td>8.9</td>
+                        <td>8.8</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2 курс</th>
+                        <td>9.0</td>
+                        <td>9.1</td>
+                        <td>9.05</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3 курс</th>
+                        <td>9.2</td>
+                        <td>9.3</td>
+                        <td>9.25</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row">Итого</th>
+                        <td colspan="2">Общий средний балл</td>
+                        <td>9.03</td>
+                    </tr>
+                </tfoot>
+            </table>
+            
+            <!-- Колонтитулы для таблицы через col -->
+            <p><small>Таблица успеваемости за 3 года обучения</small></p>
         </section>
 
-        <!-- Секция: Проекты -->
-        <section id="projects">
-            <h2>Учебные проекты</h2>
+        <!-- Секция: Данные и программирование -->
+        <section id="data">
+            <h2>Программирование и данные</h2>
+            
+            <!-- Canvas для графики -->
+            <h3>Пример canvas:</h3>
+            <canvas id="myCanvas" width="300" height="150">
+                Ваш браузер не поддерживает canvas.
+            </canvas>
+            
+            <!-- SVG графика -->
+            <h3>Пример SVG:</h3>
+            <div class="svg-container">
+                <svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="150" height="70" x="25" y="15" 
+                          rx="10" ry="10" fill="#1e3a8a" />
+                    <circle cx="100" cy="50" r="20" fill="#e0e7ff" />
+                    <text x="80" y="55" fill="white" font-size="12">ВШЭ</text>
+                </svg>
+            </div>
+            
+            <!-- Встраиваемые объекты -->
+            <h3>Embed и Object:</h3>
+            <embed src="sample.pdf" type="application/pdf" width="100%" height="200">
+            <object data="sample.pdf" type="application/pdf" width="100%" height="200">
+                <param name="view" value="FitH">
+                Ваш браузер не поддерживает PDF
+            </object>
+            
+            <!-- Скрипт и noscript -->
+            <script>
+                // Canvas рисование
+                const canvas = document.getElementById('myCanvas');
+                if (canvas.getContext) {
+                    const ctx = canvas.getContext('2d');
+                    ctx.fillStyle = '#1e3a8a';
+                    ctx.fillRect(20, 20, 260, 110);
+                    ctx.fillStyle = 'white';
+                    ctx.font = '16px Arial';
+                    ctx.fillText('Полина', 120, 80);
+                }
+            </script>
+            <noscript>
+                <p>Ваш браузер не поддерживает JavaScript или он отключен.</p>
+            </noscript>
+            
+            <!-- Data list для примера -->
+            <h3>Языки программирования:</h3>
+            <input list="languages" placeholder="Выберите язык">
+            <datalist id="languages">
+                <option value="Python">
+                <option value="C++">
+                <option value="JavaScript">
+            </datalist>
+        </section>
+
+        <!-- Секция: Медиа -->
+        <section id="media">
+            <h2>Медиа-контент</h2>
+            
+            <!-- Аудио -->
+            <h3>Аудио-запись лекции:</h3>
+            <audio controls>
+                <source src="lecture.mp3" type="audio/mpeg">
+                <source src="lecture.ogg" type="audio/ogg">
+                <track kind="captions" src="lecture.vtt" srclang="ru" label="Russian">
+                Ваш браузер не поддерживает аудио.
+            </audio>
+            
+            <!-- Видео -->
+            <h3>Видео-презентация:</h3>
+            <video width="400" controls poster="poster.jpg">
+                <source src="presentation.mp4" type="video/mp4">
+                <source src="presentation.webm" type="video/webm">
+                <track kind="subtitles" src="presentation.vtt" srclang="ru" label="Русский">
+                <track kind="subtitles" src="presentation.en.vtt" srclang="en" label="English">
+                Ваш браузер не поддерживает видео.
+            </video>
+            
+            <!-- Карта изображений -->
+            <h3>Карта изображений:</h3>
+            <img src="images/campus-map.jpg" alt="Карта кампуса" usemap="#campusmap" width="400" height="300">
+            <map name="campusmap">
+                <area shape="rect" coords="0,0,100,100" href="https://www.hse.ru/ba/miem/" alt="МИЭМ" title="МИЭМ">
+                <area shape="circle" coords="200,150,50" href="https://library.hse.ru/" alt="Библиотека" title="Библиотека">
+                <area shape="poly" coords="300,200,350,200,325,250" href="https://dorm.hse.ru/" alt="Общежитие" title="Общежитие">
+            </map>
+            
+            <!-- Picture с разными разрешениями -->
+            <h3>Адаптивное изображение:</h3>
+            <picture>
+                <source media="(min-width: 800px)" srcset="images/campus-large.jpg">
+                <source media="(min-width: 400px)" srcset="images/campus-medium.jpg">
+                <img src="images/campus-small.jpg" alt="Кампус ВШЭ" style="width:100%;">
+            </picture>
+
+        <!-- Секция: Семантические элементы -->
+        <section id="semantic">
+            <h2>Семантическая разметка</h2>
+            
+            <!-- Article -->
             <article>
-                <h3>Разработка функциональной и системной архитектуры системы обеспечения жизненного цикла доверенного ПО</h3>
+                <header>
+                    <h3>Исследование: Применение нейросетей в математике</h3>
+                    <p>Опубликовано: <time datetime="2026-02-10">10 февраля 2026</time></p>
+                </header>
+                <p>В данном исследовании рассматриваются методы ...</p>
+                <details>
+                    <summary>Подробнее</summary>
+                    <p>Нейросети могут использоваться для решения дифференциальных уравнений ...</p>
+                </details>
+                <footer>
+                    <p>Автор: Бородушкина П.А.</p>
+                </footer>
             </article>
-            <article>
-                <h3>Веб-курс по изученияю координатного метода для 14 номера ЕГЭ по профильной математике</h3>
-            </article>
+            
+            <!-- Aside (боковая панель) -->
+            <aside>
+                <h4>Интересный факт</h4>
+                <p>МИЭМ был основан в <time datetime="1962">1962 году</time> как Московский институт электронного машиностроения.</p>
+            </aside>
+            
+            <!-- Еще один aside -->
+            <aside>
+                <h4>Цитата</h4>
+                <blockquote cite="https://www.hse.ru/">
+                    <p>"Не для школы, но для жизни мы учимся."</p>
+                </blockquote>
+            </aside>
+            
+            <!-- Детали и саммари -->
+            <details>
+                <summary>Расписание консультаций</summary>
+                <p>Понедельник, среда: 15:00-17:00, ауд. 324</p>
+                <p>Предварительная запись по email</p>
+            </details>
         </section>
     </main>
 
     <!-- Подвал -->
     <footer>
         <p>© 2026 Бородушкина Полина. Студентка НИУ ВШЭ.</p>
-        <p>Контакты для связи: <a href="feedback.html">Страница обратной связи</a></p>
-        <p><small>Этот сайт является учебным проектом.</small></p>
+        <address>
+            Контакты: <a href="mailto:pdorodusjkina@edu.hse.ru">pdorodusjkina@edu.hse.ru</a><br>
+            Телефон: <a href="tel:+74991234567">+7 (499) 123-45-67</a>
+        </address>
+        <p><small>Этот сайт является учебным проектом. Все теги HTML использованы.</small></p>
+        <!-- Ссылка наверх с помощью base -->
+        <p><a href="/">Вернуться на главную (base)</a></p>
     </footer>
 </body>
 </html>
