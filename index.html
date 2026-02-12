@@ -9,296 +9,112 @@
     <meta name="description" content="Сайт-портфолио студентки ВШЭ Полины Бородушкиной">
     <meta name="keywords" content="ВШЭ, МИЭМ, прикладная математика, студент, портфолио">
     <meta name="author" content="Бородушкина Полина">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        
-        header {
-            background-color: #1e3a8a;
-            color: white;
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        nav {
-            background-color: white;
+        /* Селектор элемента с внутренним CSS */
+        address {
+            font-family: 'Georgia', serif;
+            font-size: 14px;
+            color: #4b5563;
+            background-color: #f9fafb;
             padding: 15px;
             border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: #1e3a8a;
-            font-weight: bold;
-            padding: 8px 16px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        
-        nav a:hover {
-            background-color: #e0e7ff;
-        }
-        
-        main {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            border-top: 1px solid #ddd;
+            border-left: 4px solid #1e3a8a;
             margin-top: 20px;
         }
         
-        h1, h2, h3, h4, h5, h6 {
-            margin-bottom: 10px;
-        }
-        
-        h1 { font-size: 2em; }
-        h2 { font-size: 1.75em; color: #1e3a8a; border-bottom: 2px solid #e0e7ff; padding-bottom: 10px; margin: 25px 0 15px; }
-        h3 { font-size: 1.5em; color: #000000; margin: 20px 0 10px; }
-        h4 { font-size: 1.25em; color: #4b5563; margin: 15px 0 8px; }
-        h5 { font-size: 1.1em; color: #6b7280; margin: 12px 0 6px; }
-        h6 { font-size: 1em; color: #9ca3af; margin: 10px 0 4px; }
-        
-        .student-info {
-            display: flex;
-            align-items: flex-start;
-            gap: 30px;
-            margin: 20px 0;
-        }
-        
-        .student-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 8px;
-            object-fit: cover;
-            border: 3px solid #e0e7ff;
-        }
-        
-        ul, ol {
-            margin: 15px 0 15px 25px;
-        }
-        
-        li {
-            margin: 8px 0;
-        }
-        
-        a {
-            color: #1e3a8a;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        strong, b {
-            color: #1e3a8a;
-        }
-        
-        .course-badge {
-            display: inline-block;
-            background-color: #1e3a8a;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.9em;
-            margin-left: 10px;
-        }
-        
-        .data-grid, .media-grid, .semantic-grid, .table-responsive, .dialog-demo {
-            margin: 20px 0;
-            padding: 15px;
-            background: #f9fafb;
-            border-radius: 8px;
-        }
-        
-        .badge {
-            background: #1e3a8a;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.8em;
-        }
-        
-        mark {
+        /* Селектор класса с внутренним CSS */
+        .highlight-text {
             background-color: #fef08a;
-            padding: 2px 4px;
-            border-radius: 2px;
-        }
-        
-        time {
-            font-weight: bold;
-            color: #c7c7ff;
-        }
-        
-        hr {
-            margin: 20px 0;
-            border: 0;
-            border-top: 1px solid #e5e7eb;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-        }
-        
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-        
-        th {
-            background-color: #1e3a8a;
-            color: white;
-        }
-        
-        tr:nth-child(even) {
-            background-color: #f9fafb;
-        }
-        
-        figure {
-            margin: 20px 0;
-            padding: 10px;
-            background: #f9fafb;
-            border-radius: 8px;
-        }
-        
-        figcaption {
-            text-align: center;
-            font-style: italic;
-            color: #666;
-            margin-top: 8px;
-        }
-        
-        aside {
-            background: #e0e7ff;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        
-        details {
-            margin: 15px 0;
-            padding: 10px;
-            background: #f9fafb;
-            border-radius: 8px;
-        }
-        
-        summary {
-            font-weight: bold;
-            cursor: pointer;
             color: #1e3a8a;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 1.1em;
+            border: 1px solid #eab308;
         }
         
-        dialog {
+        /* Селектор идентификатора с внутренним CSS */
+        #special-note {
+            font-size: 18px;
+            font-style: italic;
+            color: #6b21a8;
+            background: linear-gradient(to right, #f3e8ff, #ffffff);
             padding: 20px;
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            max-width: 400px;
-            margin: auto;
+            border-radius: 10px;
+            border: 2px dashed #8b5cf6;
+            margin: 25px 0;
+            box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.1);
         }
         
-        dialog::backdrop {
-            background: rgba(0,0,0,0.5);
+        /* Комбинация селекторов во внутреннем CSS */
+        footer > p > a {
+            color: #b45309;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid #f59e0b;
+            padding-bottom: 2px;
         }
         
-        canvas {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            max-width: 100%;
-            height: auto;
+        footer > p > a:hover {
+            color: #92400e;
+            border-bottom-color: #92400e;
         }
         
-        .svg-container {
-            text-align: center;
-            margin: 15px 0;
+        /* Псевдо-элемент во внутреннем CSS */
+        blockquote::before {
+            content: "«";
+            font-size: 3em;
+            color: #cbd5e1;
+            position: absolute;
+            left: -15px;
+            top: -20px;
         }
         
-        svg {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-        
-        audio, video {
-            max-width: 100%;
-            margin: 15px 0;
-        }
-        
-        embed, object {
-            margin: 15px 0;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-        
-        .code-block {
-            background: #1e1e1e;
-            color: #d4d4d4;
-            padding: 15px;
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
-            margin: 15px 0;
-        }
-        
-        .fieldset-demo {
+        blockquote {
+            position: relative;
+            padding-left: 30px;
+            font-style: italic;
+            color: #334155;
             margin: 20px 0;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+        }
+        
+        /* Атрибутный селектор во внутреннем CSS */
+        [data-status="important"] {
+            background-color: #fee2e2;
+            border: 2px solid #ef4444;
+            color: #7f1d1d;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        
+        /* Демонстрация !important во внутреннем CSS */
+        .force-style {
+            color: #10b981 !important;
+            font-size: 20px !important;
+            background-color: #d1fae5 !important;
         }
     </style>
 </head>
 <body>
-    <!-- Шапка сайта -->
-    <header>
+    <!-- Шапка сайта с inline-стилями -->
+    <header style="background: linear-gradient(145deg, #0f2b5e, #1e3a8a); border-bottom: 5px solid #fbbf24; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
         <hgroup>
-            <h1>Бородушкина Полина Андреевна</h1>
-            <h2>Студентка 4-го курса НИУ ВШЭ</h2>
+            <h1 style="font-family: 'Times New Roman', serif; text-shadow: 3px 3px 6px rgba(0,0,0,0.5); letter-spacing: 3px; margin-bottom: 5px;">Бородушкина Полина Андреевна</h1>
+            <h2 style="color: #fcd34d; font-size: 1.5em; font-weight: 300; border-bottom: none;">Студентка 4-го курса НИУ ВШЭ</h2>
         </hgroup>
-        <p>
+        <p style="font-size: 1.2em; background-color: rgba(255,255,255,0.2); padding: 12px; border-radius: 40px; display: inline-block;">
             Прикладная математика 
-            <span class="course-badge">МИЭМ</span>
-            <span class="badge">Выпуск 2026</span>
+            <span class="course-badge" style="background-color: #dc2626 !important;">МИЭМ</span>
+            <span class="badge" style="background-color: #059669 !important; font-size: 14px;">Выпуск 2026</span>
         </p>
     </header>
 
     <!-- Навигация -->
     <nav>
-        <ul>
-            <li><a href="index.html">Главная</a></li>
+        <ul class="inline-menu" style="background-color: white; padding: 10px; border-radius: 50px;">
+            <li><a href="index.html" style="background-color: #1e3a8a; color: white;">Главная</a></li>
             <li><a href="feedback.html">Обратная связь</a></li>
             <li><a href="#data">Данные</a></li>
             <li><a href="#media">Медиа</a></li>
@@ -308,75 +124,79 @@
 
     <!-- Основное содержимое -->
     <main>
-        <!-- Секция: Обо мне -->
-        <section id="about">
-            <h2>Обо мне</h2>
-            <div class="student-info">
-                <figure>
+        <!-- Секция: Обо мне с inline-стилями -->
+        <section id="about" style="border: 3px solid #1e3a8a; box-shadow: 8px 8px 0 rgba(30, 58, 138, 0.2);">
+            <h2 style="color: #0a1a3a; font-size: 2.2em; border-bottom: 4px solid #fbbf24; display: inline-block;">Обо мне</h2>
+            <div class="student-info clearfix">
+                <figure style="border: 5px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.15); transform: rotate(-1deg);">
                     <img src="images/avatar.jpg" 
                          alt="Фотография студента" 
-                         class="student-photo"
+                         class="student-photo float-right"
                          width="200" 
                          height="200"
-                         loading="lazy">
-                    <figcaption>Полина Бородушкина, 2026 г.</figcaption>
+                         loading="lazy"
+                         style="border: 4px solid #fbbf24; border-radius: 15px;">
+                    <figcaption style="font-size: 0.9em; color: #475569; margin-top: 12px;">Полина Бородушкина, 2026 г.</figcaption>
                 </figure>
                 <div>
-                    <p>Привет! Меня зовут <strong>Бородушкина Полина</strong>. Я учусь на 4 курсе образовательной программы <b>«Прикладная математика»</b> в <a href="https://www.hse.ru" target="_blank" rel="noopener noreferrer">Национальном исследовательском университете «Высшая школа экономики»</a>.</p>
-                    <p><em>Моя специализация:</em> <i>математическое моделирование</i>.</p>
+                    <p style="font-size: 1.1em; line-height: 1.8; background-color: #f8fafc; padding: 20px; border-radius: 12px;">Привет! Меня зовут <strong style="color: #b45309;">Бородушкина Полина</strong>. Я учусь на 4 курсе образовательной программы <b>«Прикладная математика»</b> в <a href="https://www.hse.ru" target="_blank" rel="noopener noreferrer" style="color: #2563eb; font-weight: 700;">Национальном исследовательском университете «Высшая школа экономики»</a>.</p>
+                    <p><em style="color: #059669; font-size: 1.1em;">Моя специализация:</em> <i style="color: #6d28d9; font-weight: 600;">математическое моделирование</i>.</p>
                     
                     <!-- Диалоговое окно (dialog) -->
-                    <dialog id="infoDialog">
-                        <h4>Информация</h4>
-                        <p>Это диалоговое окно создано с помощью тега &lt;dialog&gt;.</p>
-                        <button onclick="document.getElementById('infoDialog').close()">Закрыть</button>
+                    <dialog id="infoDialog" style="border: none; border-radius: 16px; padding: 25px; max-width: 450px; background: linear-gradient(145deg, white, #f8fafc);">
+                        <h4 style="color: #1e3a8a; font-size: 1.5em; margin-bottom: 15px;">Информация</h4>
+                        <p style="margin-bottom: 20px;">Это диалоговое окно</p>
+                        <button onclick="document.getElementById('infoDialog').close()" style="background: linear-gradient(to right, #ef4444, #dc2626); color: white; border: none; padding: 12px 28px; border-radius: 40px; font-weight: bold; cursor: pointer;">Закрыть</button>
                     </dialog>
-                    <button onclick="document.getElementById('infoDialog').showModal()">
+                    <button onclick="document.getElementById('infoDialog').showModal()" style="background: linear-gradient(to right, #1e3a8a, #2563eb); color: white; border: none; padding: 14px 32px; border-radius: 50px; font-size: 1.1em; font-weight: bold; box-shadow: 0 6px 14px rgba(30, 58, 138, 0.4); cursor: pointer; transition: all 0.3s;">
                         Показать информацию
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- Секция: Учеба -->
+        <!-- Секция: Учеба с демонстрацией списков -->
         <section id="studies">
-            <h2>Моя учеба в ВШЭ</h2>
+            <h2 style="color: #1e3a8a; border-bottom: 3px solid #93c5fd; padding-bottom: 10px;">Моя учеба в ВШЭ</h2>
             
-            <h3>Ключевые дисциплины:</h3>
-            <ol type="I">
-                <li>Математический анализ</li>
-                <li>Дифференциальные уравнения</li>
-                <li>Теория вероятностей и математическая статистика</li>
-                <li>Численные методы</li>
+            <h3 style="font-family: 'Courier New', monospace; color: #0891b2;">Ключевые дисциплины:</h3>
+            <ol class="roman-list" style="background-color: #f1f5f9; padding: 25px 25px 25px 50px; border-radius: 12px;">
+                <li style="margin-bottom: 12px; font-size: 1.1em;">Математический анализ</li>
+                <li style="margin-bottom: 12px; font-size: 1.1em;">Дифференциальные уравнения</li>
+                <li style="margin-bottom: 12px; font-size: 1.1em;">Теория вероятностей и математическая статистика</li>
+                <li style="margin-bottom: 12px; font-size: 1.1em;">Численные методы</li>
             </ol>
             
-            <h3>Термины:</h3>
-            <dl>
-                <dt>МИЭМ</dt>
-                <dd>Московский институт электроники и математики им. А.Н. Тихонова</dd>
-                <dt>ВШЭ</dt>
-                <dd>Национальный исследовательский университет «Высшая школа экономики»</dd>
-                <dt>НИУ</dt>
-                <dd>Национальный исследовательский университет</dd>
+            <h3 style="font-family: 'Courier New', monospace; color: #0891b2;">Термины:</h3>
+            <dl style="background: linear-gradient(145deg, #ffffff, #f1f5f9); padding: 25px; border-radius: 16px;">
+                <dt style="font-weight: 900; color: #1e3a8a; font-size: 1.2em; margin-top: 10px;">МИЭМ</dt>
+                <dd style="margin-left: 25px; padding-left: 15px; border-left: 4px solid #3b82f6;">Московский институт электроники и математики им. А.Н. Тихонова</dd>
+                <dt style="font-weight: 900; color: #1e3a8a; font-size: 1.2em; margin-top: 10px;">ВШЭ</dt>
+                <dd style="margin-left: 25px; padding-left: 15px; border-left: 4px solid #3b82f6;">Национальный исследовательский университет «Высшая школа экономики»</dd>
+                <dt style="font-weight: 900; color: #1e3a8a; font-size: 1.2em; margin-top: 10px;">НИУ</dt>
+                <dd style="margin-left: 25px; padding-left: 15px; border-left: 4px solid #3b82f6;">Национальный исследовательский университет</dd>
             </dl>
             
-            <ul>
+            <ul class="custom-list" style="list-style-type: '✓ '; list-style-position: outside; font-size: 1.05em;">
                 <li><strong>Факультет:</strong> МИЭМ им. А.Н. Тихонова</li>
                 <li><strong>Образовательная программа:</strong> Прикладная математика</li>
-                <li><strong>Статус:</strong> Студент 4-го курса (выпуск <time datetime="2026-06-30">июнь 2026 года</time>)</li>
-                <li><strong>Средний балл:</strong> <data value="9.33">9.33 (на 4 курсе)</data></li>
+                <li><strong>Статус:</strong> Студент 4-го курса (выпуск <time datetime="2026-06-30" style="color: #b45309; font-weight: bold;">июнь 2026 года</time>)</li>
+                <li><strong>Средний балл:</strong> <data value="9.33" style="background-color: #fbbf24; padding: 4px 10px; border-radius: 20px; font-weight: bold;">9.33 (на 4 курсе)</data></li>
             </ul>
+
+            <div style="margin: 30px 0;">
+                <h3>Напоминание</h3>
+                <span class="block-demo">Учебная страница</span>
+            </div>
             
-            <!-- Горизонтальная линия -->
-            <hr>
+            <hr style="border: 0; height: 3px; background: linear-gradient(to right, #1e3a8a, #93c5fd, #1e3a8a); margin: 35px 0;">
             
-            <!-- Таблица с полной структурой -->
             <h3>Успеваемость по семестрам</h3>
-            <table>
-                <caption>Средний балл по семестрам</caption>
+            <table class="table-styled">
+                <caption style="caption-side: bottom; margin-top: 10px; font-style: italic; color: #475569;">Средний балл по семестрам</caption>
                 <colgroup>
-                    <col span="1" style="background-color: #f0f4ff">
-                    <col span="3" style="background-color: white">
+                    <col span="1" style="background-color: #e0f2fe;">
+                    <col span="3" style="background-color: white;">
                 </colgroup>
                 <thead>
                     <tr>
@@ -410,43 +230,36 @@
                     <tr>
                         <th scope="row">Итого</th>
                         <td colspan="2">Общий средний балл</td>
-                        <td>9.03</td>
+                        <td style="font-weight: 900; color: #1e3a8a; background-color: #fef08a;">9.03</td>
                     </tr>
                 </tfoot>
             </table>
             
-            <!-- Колонтитулы для таблицы через col -->
-            <p><small>Таблица успеваемости за 3 года обучения</small></p>
+            <p><small style="color: #6b7280; font-size: 0.85em;">Таблица успеваемости за 3 года обучения</small></p>
         </section>
 
         <!-- Секция: Данные и программирование -->
-        <section id="data">
+        <section id="data" style="background: linear-gradient(to bottom, #ffffff, #f1f5f9); padding: 30px; border-radius: 20px;">
             <h2>Программирование и данные</h2>
+            
             
             <!-- Canvas для графики -->
             <h3>Пример canvas:</h3>
-            <canvas id="myCanvas" width="300" height="150">
+            <canvas id="myCanvas" width="300" height="150" style="border: 3px solid #1e3a8a; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);">
                 Ваш браузер не поддерживает canvas.
             </canvas>
             
             <!-- SVG графика -->
             <h3>Пример SVG:</h3>
             <div class="svg-container">
-                <svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="150" height="70" x="25" y="15" 
-                          rx="10" ry="10" fill="#1e3a8a" />
-                    <circle cx="100" cy="50" r="20" fill="#e0e7ff" />
-                    <text x="85" y="55" fill="white" font-size="12">ВШЭ</text>
+                <svg width="220" height="120" xmlns="http://www.w3.org/2000/svg" style="border: 2px dashed #1e3a8a; border-radius: 16px; padding: 5px;">
+                    <rect width="170" height="80" x="25" y="20" rx="15" ry="15" fill="#1e3a8a" style="filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));" />
+                    <circle cx="110" cy="60" r="25" fill="#fbbf24" />
+                    <text x="95" y="70" fill="white" font-size="14" font-weight="bold" font-family="Arial">ВШЭ</text>
+                    <text x="85" y="95" fill="#1e3a8a" font-size="10">МИЭМ</text>
                 </svg>
             </div>
             
-            <!-- Встраиваемые объекты -->
-            <h3>Embed и Object:</h3>
-            <embed src="images/sample1.pdf" type="application/pdf" width="100%" height="200">
-            <object data="images/sample2.pdf" type="application/pdf" width="100%" height="200">
-                <param name="view" value="FitH">
-                Ваш браузер не поддерживает PDF
-            </object>
             
             <!-- Скрипт и noscript -->
             <script>
@@ -454,25 +267,43 @@
                 const canvas = document.getElementById('myCanvas');
                 if (canvas.getContext) {
                     const ctx = canvas.getContext('2d');
-                    ctx.fillStyle = '#1e3a8a';
+                    
+                    // Градиентный фон
+                    const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+                    gradient.addColorStop(0, '#1e3a8a');
+                    gradient.addColorStop(1, '#3b82f6');
+                    
+                    ctx.fillStyle = gradient;
                     ctx.fillRect(20, 20, 260, 110);
+                    
+                    // Тень
+                    ctx.shadowColor = 'rgba(0,0,0,0.5)';
+                    ctx.shadowBlur = 8;
+                    ctx.shadowOffsetX = 4;
+                    ctx.shadowOffsetY = 4;
+                    
                     ctx.fillStyle = 'white';
-                    ctx.font = '16px Arial';
-                    ctx.fillText('Я - студент ВШЭ', 85, 80);
+                    ctx.font = 'bold 18px Arial';
+                    ctx.fillText('Я - студент ВШЭ', 55, 85);
+                    
+                    ctx.shadowBlur = 0; // Сброс тени
                 }
             </script>
             <noscript>
-                <p>Ваш браузер не поддерживает JavaScript или он отключен.</p>
+                <p style="color: red; background: #fee; padding: 15px; border-radius: 8px; border-left: 6px solid #ef4444;">
+                    Ваш браузер не поддерживает JavaScript или он отключен.
+                </p>
             </noscript>
             
             <!-- Data list для примера -->
             <h3>Языки программирования:</h3>
-            <input list="languages" placeholder="Выберите язык">
+            <input list="languages" placeholder="Выберите язык" style="width: 100%; padding: 14px; border: 2px solid #1e3a8a; border-radius: 50px; font-size: 1em; margin-bottom: 30px;">
             <datalist id="languages">
                 <option value="Python">
                 <option value="C++">
                 <option value="JavaScript">
             </datalist>
+            
         </section>
 
         <!-- Секция: Медиа -->
@@ -481,7 +312,7 @@
             
             <!-- Аудио -->
             <h3>Международный гимн студентов:</h3>
-            <audio controls>
+            <audio controls style="width: 100%; margin: 15px 0; border-radius: 30px; background-color: #f1f5f9; padding: 5px;">
                 <source src="images/anthem.mp3" type="audio/mpeg">
                 <track kind="captions" src="anthem.vtt" srclang="ru" label="Russian">
                 Ваш браузер не поддерживает аудио.
@@ -489,7 +320,7 @@
             
             <!-- Видео -->
             <h3>Видео-презентация:</h3>
-            <video width="400" controls poster="poster.jpg">
+            <video width="400" controls poster="poster.jpg" style="border: 5px solid #1e3a8a; border-radius: 16px; box-shadow: 0 12px 24px rgba(0,0,0,0.2); max-width: 100%;">
                 <source src="images/video.mp4" type="video/mp4">
                 <track kind="subtitles" src="video.vtt" srclang="ru" label="Русский">
                 Ваш браузер не поддерживает видео.
@@ -498,54 +329,59 @@
             <!-- Picture с разными разрешениями -->
             <h3>Корпуса:</h3>
             <picture>
-                <img src="images/campus-small.jpg" alt="Кампусы ВШЭ" style="width:100%;">
+                <img src="images/campus-small.jpg" alt="Кампусы ВШЭ" style="width:100%; border-radius: 16px; border: 4px solid white; box-shadow: 0 12px 28px rgba(0,0,0,0.15);">
             </picture>
+        </section>
 
         <!-- Секция: Семантические элементы -->
         <section id="semantic">
             <h2>Исследования</h2>
             
             <!-- Article -->
-            <article>
-                <header>
-                    <h3>Исследование: Методика поиска уязвимостей в программном обеспечении, написанном на нескольких языках программирования.</h3>
-                    <p>Опубликовано: <time datetime="2026-02-10"> май 2025</time></p>
+            <article style="background-color: white; border-radius: 20px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); margin-bottom: 30px;">
+                <header style="border-bottom: 2px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 15px;">
+                    <h3 style="color: #0f2b5e; font-size: 1.6em;">Исследование: Методика поиска уязвимостей в программном обеспечении, написанном на нескольких языках программирования.</h3>
+                    <p style="color: #64748b;"><time datetime="2026-02-10" style="color: #0891b2;">май 2025</time></p>
                 </header>
-                <details>
-                    <summary>Подробнее</summary>
-                    <p>В связи с необходимостью повышения производительности труда при разметке результатов автоматизированного поиска уязвимостей в программах, проведенного с использованием инструментального средства, возникает проблема дефицита на рынке высококвалифицированных аналитиков для проведения разметки результатов. В работе описана разработанная методика для поиска уязвимостей в программном обеспечение, написанном на нескольких языках программирования (С, С++, Java, Python, Go).</p>
+                <details style="background-color: #f8fafc; padding: 15px; border-radius: 12px;">
+                    <summary style="font-weight: bold; color: #1e3a8a; cursor: pointer; font-size: 1.1em;">Подробнее</summary>
+                    <div class="overflow-demo cursor-demo" style="margin-bottom: 30px;">
+                        <p style="margin: 0;">В связи с необходимостью повышения производительности труда при разметке результатов автоматизированного поиска уязвимостей в программах, проведенного с использованием инструментального средства, возникает проблема дефицита на рынке высококвалифицированных аналитиков для проведения разметки результатов. В работе описана разработанная методика для поиска уязвимостей в программном обеспечение, написанном на нескольких языках программирования (С, С++, Java, Python, Go)</p>
+                    </div>
                 </details>
-                <footer>
-                    <p>Авторы: ПОЗИН Б.А., БОРОДУШКИНА П.А., КОРОТКОВ Д.А., ФЕДОРОВ М.А., МУРАТОВ А.Ф.</p>
+                <footer style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #e2e8f0;">
+                    <p style="color: #475569;"><strong>Авторы:</strong> ПОЗИН Б.А., БОРОДУШКИНА П.А., КОРОТКОВ Д.А., ФЕДОРОВ М.А., МУРАТОВ А.Ф.</p>
                 </footer>
             </article>
             
             <!-- Aside (боковая панель) -->
-            <aside>
-                <h4>Интересный факт</h4>
-                <p>МИЭМ был основан в <time datetime="1962">1962 году</time> как Московский институт электронного машиностроения.</p>
+            <aside style="background: linear-gradient(145deg, #f1f5f9, #ffffff); border-left: 8px solid #fbbf24; padding: 25px; border-radius: 16px; margin: 30px 0;">
+                <h4 style="color: #92400e; font-size: 1.3em; margin-bottom: 10px;">Интересный факт</h4>
+                <p style="font-size: 1.1em;">МИЭМ был основан в <time datetime="1962" style="background-color: #fbbf24; padding: 3px 10px; border-radius: 20px; font-weight: bold;">1962 году</time> как Московский институт электронного машиностроения.</p>
             </aside>
             
-            <!-- Еще один aside -->
-            <aside>
-                <h4>Цитата</h4>
-                <blockquote cite="https://www.hse.ru/">
-                    <p>"Не для школы, но для жизни мы учимся."</p>
-                </blockquote>
-            </aside>
-        </section>
+            <!-- Демонстрация data-status атрибута -->
+            <div data-status="important" style="margin-top: 30px;">
+                <p>"Не для школы, но для жизни мы учимся."</p>
+            </div>
+    
     </main>
 
-    <!-- Подвал -->
-    <footer>
-        <p>© 2026 Бородушкина Полина. Студентка НИУ ВШЭ.</p>
-        <address>
-            Контакты: <a href="mailto:borodushkina@edu.hse.ru">borodushkina@edu.hse.ru - фиктивная</a><br>
-            Телефон: <a href="tel:+74991234567">+7 (499) 123-45-67 - фиктивный</a>
+    <!-- Подвал с inline-стилями -->
+    <footer style="background: linear-gradient(to right, #1e293b, #0f172a); color: white; padding: 40px 30px; border-radius: 20px 20px 0 0; margin-top: 50px;">
+        <p style="font-size: 1.2em; color: #fbbf24;">© 2026 Бородушкина Полина. Студентка НИУ ВШЭ.</p>
+        <address style="background-color: rgba(255,255,255,0.1); border-left-color: #fbbf24; color: #cbd5e1; font-style: normal;">
+            Контакты: <a href="mailto:borodushkina@edu.hse.ru" style="color: #93c5fd; text-decoration: underline wavy;">borodushkina@edu.hse.ru - фиктивная</a><br>
+            Телефон: <a href="tel:+74991234567" style="color: #93c5fd;">+7 (499) 123-45-67 - фиктивный</a>
         </address>
-        <p><small>Этот сайт является учебным проектом. Все теги HTML использованы.</small></p>
-        <!-- Ссылка наверх с помощью base -->
-        <p><a href="/">Вернуться на главную (base)</a></p>
+        <p><small style="color: #94a3b8;">Этот сайт является учебным проектом. Все теги HTML и стили CSS использованы.</small></p>
+        <p><a href="/" style="color: white; background-color: #fbbf24; padding: 10px 24px; border-radius: 40px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px;">Вернуться на главную (base)</a></p>
     </footer>
+    
+    
+    <!-- Демонстрация highlight-text из внутреннего CSS -->
+    <p class="highlight-text" style="margin-top: 30px; text-align: center; font-size: 1.3em;">
+        Я - Студент ВШЭ 
+    </p>
 </body>
 </html>
