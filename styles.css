@@ -1,5 +1,3 @@
-/* ===== СТИЛИ ИЗ ПРЕЗЕНТАЦИИ ===== */
-
 /* --- Селекторы элементные, группировка --- */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -159,7 +157,7 @@ main section + section {
     padding-bottom: 5px;
 }
 
-/* --- CSS Box Model из презентации --- */
+/* --- CSS Box Model --- */
 p.one {
     border-style: solid;
     border-width: 5px;
@@ -179,7 +177,7 @@ p.two {
     margin: 15px 0;
 }
 
-/* --- Outline из презентации --- */
+/* --- Outline  --- */
 .outline-demo {
     border: 1px solid red;
     outline: green dotted thick;
@@ -188,7 +186,7 @@ p.two {
     margin: 25px 0;
 }
 
-/* --- Margin и Padding из презентации --- */
+/* --- Margin и Padding  --- */
 .margin-demo {
     margin: 100px 50px;
     padding-top: 25px;
@@ -254,7 +252,7 @@ p.two {
     color: #a78bfa;
 }
 
-/* --- Lists стили из презентации --- */
+/* --- Lists стили  --- */
 ul.custom-list {
     list-style-type: square;
     list-style-position: inside;
@@ -280,7 +278,7 @@ ol.roman-list {
     margin-left: 30px;
 }
 
-/* Стиль списка из презентации: li {display:inline;} */
+/* Стиль списка: li {display:inline;} */
 .inline-menu {
     list-style: none;
     padding: 0;
@@ -295,7 +293,7 @@ ol.roman-list {
     border-radius: 20px;
 }
 
-/* Стиль из презентации: span {display:block;} */
+/* Стиль : span {display:block;} */
 span.block-demo {
     display: block;
     background-color: #fef9c3;
@@ -304,7 +302,7 @@ span.block-demo {
     border-left: 4px solid #eab308;
 }
 
-/* --- Размеры (CSS Размеры из презентации) --- */
+/* --- Размеры  --- */
 .size-demo {
     width: 80%;
     max-width: 600px;
@@ -317,7 +315,7 @@ span.block-demo {
     padding: 15px;
 }
 
-/* --- Отображение (Display) из презентации --- */
+/* --- Отображение (Display) --- */
 .hidden-demo {
     visibility: hidden;
 }
@@ -326,7 +324,7 @@ span.block-demo {
     display: none;
 }
 
-/* --- Позиционирование из презентации --- */
+/* --- Позиционирование --- */
 .position-relative {
     position: relative;
     top: 20px;
@@ -364,7 +362,7 @@ span.block-demo {
     padding: 10px;
 }
 
-/* --- Float из презентации --- */
+/* --- Float  --- */
 .float-right {
     float: right;
     margin: 0 0 20px 20px;
@@ -380,7 +378,7 @@ span.block-demo {
     clear: both;
 }
 
-/* --- Overflow и Cursor из презентации --- */
+/* --- Overflow и Cursor  --- */
 .overflow-demo {
     width: 300px;
     height: 100px;
@@ -400,7 +398,7 @@ span.block-demo {
     cursor: help;
 }
 
-/* --- Clip из презентации --- */
+/* --- Clip  --- */
 .clip-demo {
     position: absolute;
     clip: rect(0px, 100px, 100px, 0px);
@@ -464,7 +462,7 @@ section h2::before {
     font-weight: normal;
 }
 
-/* --- Медиа-запросы для адаптивности --- */
+/* --- Медиа-запросы --- */
 @media screen and (max-width: 768px) {
     body {
         padding: 10px;
