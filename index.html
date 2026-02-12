@@ -323,7 +323,7 @@
                 </figure>
                 <div>
                     <p>Привет! Меня зовут <strong>Бородушкина Полина</strong>. Я учусь на 4 курсе образовательной программы <b>«Прикладная математика»</b> в <a href="https://www.hse.ru" target="_blank" rel="noopener noreferrer">Национальном исследовательском университете «Высшая школа экономики»</a>.</p>
-                    <p><em>Моя специализация:</em> <i>системный анализ и математическое моделирование</i>.</p>
+                    <p><em>Моя специализация:</em> <i>математическое моделирование</i>.</p>
                     
                     <!-- Диалоговое окно (dialog) -->
                     <dialog id="infoDialog">
@@ -346,7 +346,7 @@
             <ol type="I">
                 <li>Математический анализ</li>
                 <li>Дифференциальные уравнения</li>
-                <li>Теория вероятностей</li>
+                <li>Теория вероятностей и математическая статистика</li>
                 <li>Численные методы</li>
             </ol>
             
@@ -366,7 +366,6 @@
                 <li><strong>Статус:</strong> Студент 4-го курса (выпуск <time datetime="2026-06-30">июнь 2026 года</time>)</li>
                 <li><strong>Средний балл:</strong> <data value="9.33">9.33 (на 4 курсе)</data></li>
             </ul>
-            <p>ВШЭ дает не только глубокие теоретические знания, но и уделяет большое внимание <em>практическим навыкам</em> и <mark>проектной работе</mark>.</p>
             
             <!-- Горизонтальная линия -->
             <hr>
@@ -437,14 +436,14 @@
                     <rect width="150" height="70" x="25" y="15" 
                           rx="10" ry="10" fill="#1e3a8a" />
                     <circle cx="100" cy="50" r="20" fill="#e0e7ff" />
-                    <text x="80" y="55" fill="white" font-size="12">ВШЭ</text>
+                    <text x="70" y="55" fill="white" font-size="12">ВШЭ</text>
                 </svg>
             </div>
             
             <!-- Встраиваемые объекты -->
             <h3>Embed и Object:</h3>
-            <embed src="sample.pdf" type="application/pdf" width="100%" height="200">
-            <object data="sample.pdf" type="application/pdf" width="100%" height="200">
+            <embed src="images/sample1.pdf" type="application/pdf" width="100%" height="200">
+            <object data="images/sample2.pdf" type="application/pdf" width="100%" height="200">
                 <param name="view" value="FitH">
                 Ваш браузер не поддерживает PDF
             </object>
@@ -459,7 +458,7 @@
                     ctx.fillRect(20, 20, 260, 110);
                     ctx.fillStyle = 'white';
                     ctx.font = '16px Arial';
-                    ctx.fillText('Полина', 120, 80);
+                    ctx.fillText('Я - студент ВШЭ', 120, 80);
                 }
             </script>
             <noscript>
@@ -481,27 +480,24 @@
             <h2>Медиа-контент</h2>
             
             <!-- Аудио -->
-            <h3>Аудио-запись лекции:</h3>
+            <h3>Международный гимн студентов:</h3>
             <audio controls>
-                <source src="lecture.mp3" type="audio/mpeg">
-                <source src="lecture.ogg" type="audio/ogg">
-                <track kind="captions" src="lecture.vtt" srclang="ru" label="Russian">
+                <source src="images/anthem.mp3" type="audio/mpeg">
+                <track kind="captions" src="anthem.vtt" srclang="ru" label="Russian">
                 Ваш браузер не поддерживает аудио.
             </audio>
             
             <!-- Видео -->
             <h3>Видео-презентация:</h3>
             <video width="400" controls poster="poster.jpg">
-                <source src="presentation.mp4" type="video/mp4">
-                <source src="presentation.webm" type="video/webm">
-                <track kind="subtitles" src="presentation.vtt" srclang="ru" label="Русский">
-                <track kind="subtitles" src="presentation.en.vtt" srclang="en" label="English">
+                <source src="IMG_7736.mov" type="video/mov">
+                <track kind="subtitles" src="IMG_7736.vtt" srclang="ru" label="Русский">
                 Ваш браузер не поддерживает видео.
             </video>
             
             <!-- Карта изображений -->
             <h3>Карта изображений:</h3>
-            <img src="images/campus-map.jpg" alt="Карта кампуса" usemap="#campusmap" width="400" height="300">
+            <img src="images/campus-map.webp" alt="Карта кампуса" usemap="#campusmap" width="400" height="300">
             <map name="campusmap">
                 <area shape="rect" coords="0,0,100,100" href="https://www.hse.ru/ba/miem/" alt="МИЭМ" title="МИЭМ">
                 <area shape="circle" coords="200,150,50" href="https://library.hse.ru/" alt="Библиотека" title="Библиотека">
@@ -511,9 +507,9 @@
             <!-- Picture с разными разрешениями -->
             <h3>Адаптивное изображение:</h3>
             <picture>
-                <source media="(min-width: 800px)" srcset="images/campus-large.jpg">
-                <source media="(min-width: 400px)" srcset="images/campus-medium.jpg">
-                <img src="images/campus-small.jpg" alt="Кампус ВШЭ" style="width:100%;">
+                <source media="(min-width: 800px)" srcset="images/campus-small.jpg">
+                <source media="(min-width: 400px)" srcset="images/campus-small.jpg">
+                <img src="images/campus-small.jpg" alt="Кампусы ВШЭ" style="width:100%;">
             </picture>
 
         <!-- Секция: Семантические элементы -->
@@ -523,16 +519,15 @@
             <!-- Article -->
             <article>
                 <header>
-                    <h3>Исследование: Применение нейросетей в математике</h3>
-                    <p>Опубликовано: <time datetime="2026-02-10">10 февраля 2026</time></p>
+                    <h3>Исследование: Методика поиска уязвимостей в программном обеспечении, написанном на нескольких языках программирования.</h3>
+                    <p>Опубликовано: <time datetime="2026-02-10"> май 2025</time></p>
                 </header>
-                <p>В данном исследовании рассматриваются методы ...</p>
                 <details>
                     <summary>Подробнее</summary>
-                    <p>Нейросети могут использоваться для решения дифференциальных уравнений ...</p>
+                    <p>В связи с необходимостью повышения производительности труда при разметке результатов автоматизированного поиска уязвимостей в программах, проведенного с использованием инструментального средства, возникает проблема дефицита на рынке высококвалифицированных аналитиков для проведения разметки результатов. В работе описана разработанная методика для поиска уязвимостей в программном обеспечение, написанном на нескольких языках программирования (С, С++, Java, Python, Go).</p>
                 </details>
                 <footer>
-                    <p>Автор: Бородушкина П.А.</p>
+                    <p>Авторы: ПОЗИН Б.А., БОРОДУШКИНА П.А., КОРОТКОВ Д.А., ФЕДОРОВ М.А., МУРАТОВ А.Ф.</p>
                 </footer>
             </article>
             
@@ -549,13 +544,6 @@
                     <p>"Не для школы, но для жизни мы учимся."</p>
                 </blockquote>
             </aside>
-            
-            <!-- Детали и саммари -->
-            <details>
-                <summary>Расписание консультаций</summary>
-                <p>Понедельник, среда: 15:00-17:00, ауд. 324</p>
-                <p>Предварительная запись по email</p>
-            </details>
         </section>
     </main>
 
@@ -563,8 +551,8 @@
     <footer>
         <p>© 2026 Бородушкина Полина. Студентка НИУ ВШЭ.</p>
         <address>
-            Контакты: <a href="mailto:pdorodusjkina@edu.hse.ru">pdorodusjkina@edu.hse.ru</a><br>
-            Телефон: <a href="tel:+74991234567">+7 (499) 123-45-67</a>
+            Контакты: <a href="mailto:borodushkina@edu.hse.ru">borodushkina@edu.hse.ru - фиктивная</a><br>
+            Телефон: <a href="tel:+74991234567">+7 (499) 123-45-67 - фиктивный</a>
         </address>
         <p><small>Этот сайт является учебным проектом. Все теги HTML использованы.</small></p>
         <!-- Ссылка наверх с помощью base -->
