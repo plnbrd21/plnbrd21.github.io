@@ -1,0 +1,486 @@
+/* ===== СТИЛИ ИЗ ПРЕЗЕНТАЦИИ ===== */
+
+/* --- Селекторы элементные, группировка --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+/* --- Селектор идентификатора --- */
+#about {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9eef5 100%);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#studies {
+    background-color: #ffffff;
+    border-left: 5px solid #1e3a8a;
+    padding: 25px;
+    margin: 30px 0;
+}
+
+/* --- Селектор класса --- */
+.course-badge {
+    display: inline-block;
+    background-color: #ff6b6b !important; /* !important */
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid transparent;
+}
+
+.badge {
+    background-color: #4ecdc4;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* --- Селектор атрибутный --- */
+a[target="_blank"] {
+    color: #e63946;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px dotted #e63946;
+    padding-bottom: 2px;
+}
+
+a[href^="mailto:"] {
+    color: #2a9d8f;
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+    background-color: #e9f5f2;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    border: 2px solid #b0c4de;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+    border-color: #1e3a8a;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+/* --- Селекторы псевдо-классов --- */
+nav ul li:first-child a {
+    background-color: #ffd700;
+    color: #1e3a8a;
+    font-weight: 900;
+}
+
+nav ul li:last-child a {
+    border: 2px solid #1e3a8a;
+}
+
+nav ul li:nth-child(2) a:hover {
+    background-color: #1e3a8a;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* --- Псевдо-элементы из презентации --- */
+p::first-letter {
+    color: #ff0000;
+    font-size: xx-large;
+    font-weight: bold;
+    float: left;
+    margin-right: 6px;
+    line-height: 1;
+}
+
+p::first-line {
+    color: #0000ff;
+    font-variant: small-caps;
+    font-weight: 600;
+}
+
+/* Дополнительные псевдо-элементы */
+h2::before {
+    content: "▹ ";
+    color: #1e3a8a;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #1e3a8a;
+    margin-top: 8px;
+}
+
+/* --- Комбинации селекторов --- */
+header > hgroup > h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+main section + section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px dashed #cbd5e1;
+}
+
+.student-info figure figcaption {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: #64748b;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 5px;
+}
+
+/* --- CSS Box Model из презентации --- */
+p.one {
+    border-style: solid;
+    border-width: 5px;
+    border-color: #1e3a8a;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+    background-color: #f8fafc;
+}
+
+p.two {
+    border-style: solid;
+    border-width: medium;
+    border-color: #e63946;
+    border-radius: 4px;
+    padding: 12px;
+    margin: 15px 0;
+}
+
+/* --- Outline из презентации --- */
+.outline-demo {
+    border: 1px solid red;
+    outline: green dotted thick;
+    outline-offset: 4px;
+    padding: 20px;
+    margin: 25px 0;
+}
+
+/* --- Margin и Padding из презентации --- */
+.margin-demo {
+    margin: 100px 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 50px;
+    padding-left: 50px;
+    background-color: #e0e7ff;
+    border: 1px solid #1e3a8a;
+}
+
+/* --- Background стили --- */
+.bg-gradient {
+    background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.bg-pattern {
+    background-image: radial-gradient(circle at 10px 10px, #ffffff 2px, transparent 2px);
+    background-size: 20px 20px;
+    background-color: #1e3a8a;
+    color: white;
+    padding: 20px;
+}
+
+/* --- Text стили --- */
+.text-demo {
+    text-align: justify;
+    text-transform: uppercase;
+    text-decoration: underline wavy #1e3a8a;
+    text-indent: 30px;
+    word-spacing: 5px;
+    letter-spacing: 1px;
+}
+
+/* --- Font стили --- */
+.font-demo {
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    font-style: oblique;
+    font-variant: small-caps;
+    line-height: 2;
+}
+
+/* --- Links стили --- */
+.link-custom {
+    color: #8b5cf6;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.link-custom:hover {
+    color: #6d28d9;
+    transform: translateY(-2px);
+    text-decoration: underline;
+}
+
+.link-custom:visited {
+    color: #a78bfa;
+}
+
+/* --- Lists стили из презентации --- */
+ul.custom-list {
+    list-style-type: square;
+    list-style-position: inside;
+    list-style-image: none;
+    padding-left: 20px;
+}
+
+ul.custom-list li {
+    display: list-item;
+    margin: 10px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+ul.custom-list li::marker {
+    color: #1e3a8a;
+    font-size: 1.2em;
+}
+
+ol.roman-list {
+    list-style-type: upper-roman;
+    list-style-position: outside;
+    margin-left: 30px;
+}
+
+/* Стиль списка из презентации: li {display:inline;} */
+.inline-menu {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.inline-menu li {
+    display: inline;
+    margin-right: 20px;
+    padding: 8px 16px;
+    background-color: #e0e7ff;
+    border-radius: 20px;
+}
+
+/* Стиль из презентации: span {display:block;} */
+span.block-demo {
+    display: block;
+    background-color: #fef9c3;
+    padding: 10px;
+    margin: 5px 0;
+    border-left: 4px solid #eab308;
+}
+
+/* --- Размеры (CSS Размеры из презентации) --- */
+.size-demo {
+    width: 80%;
+    max-width: 600px;
+    min-width: 300px;
+    height: auto;
+    min-height: 100px;
+    max-height: 300px;
+    overflow: auto;
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+/* --- Отображение (Display) из презентации --- */
+.hidden-demo {
+    visibility: hidden;
+}
+
+.none-demo {
+    display: none;
+}
+
+/* --- Позиционирование из презентации --- */
+.position-relative {
+    position: relative;
+    top: 20px;
+    left: 30px;
+    background-color: #ede9fe;
+    padding: 15px;
+    margin-bottom: 40px;
+}
+
+.position-absolute {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #fee2e2;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.position-fixed-demo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1e3a8a;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+.position-static-demo {
+    position: static;
+    background-color: #f1f5f9;
+    padding: 10px;
+}
+
+/* --- Float из презентации --- */
+.float-right {
+    float: right;
+    margin: 0 0 20px 20px;
+    width: 150px;
+    height: auto;
+    border: 3px solid #1e3a8a;
+    border-radius: 8px;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* --- Overflow и Cursor из презентации --- */
+.overflow-demo {
+    width: 300px;
+    height: 100px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9fafb;
+}
+
+.cursor-demo {
+    cursor: pointer;
+    transition: cursor 0.3s;
+}
+
+.cursor-demo:hover {
+    cursor: help;
+}
+
+/* --- Clip из презентации --- */
+.clip-demo {
+    position: absolute;
+    clip: rect(0px, 100px, 100px, 0px);
+    background-color: #1e3a8a;
+    color: white;
+    padding: 20px;
+}
+
+/* --- Table стили --- */
+.table-styled {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.table-styled thead tr {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: left;
+}
+
+.table-styled th,
+.table-styled td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.table-styled tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table-styled tbody tr:nth-of-type(even) {
+    background-color: #f3f4f6;
+}
+
+.table-styled tbody tr:last-of-type {
+    border-bottom: 2px solid #1e3a8a;
+}
+
+.table-styled tbody tr:hover {
+    background-color: #e0e7ff;
+    transition: 0.2s;
+}
+
+/* --- Селектор псевдо-элемента для счетчика --- */
+section {
+    counter-reset: section-counter;
+}
+
+section h2 {
+    counter-increment: section-counter;
+}
+
+section h2::before {
+    content: "Раздел " counter(section-counter) ": ";
+    font-size: 0.7em;
+    color: #64748b;
+    font-weight: normal;
+}
+
+/* --- Медиа-запросы для адаптивности --- */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .student-info {
+        flex-direction: column;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+}
