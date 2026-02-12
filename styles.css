@@ -1,375 +1,331 @@
-/* --- Селекторы элементные, группировка --- */
+:root {
+    --primary: #1e3a8a;
+    --primary-light: #3b82f6;
+    --primary-dark: #0f2b5e;
+    --accent: #fbbf24;
+    --accent-soft: #fef3c7;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-600: #475569;
+    --gray-900: #0f172a;
+    --success: #10b981;
+    --error: #ef4444;
+    --white: #ffffff;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--gray-50);
+    color: var(--gray-900);
+    line-height: 1.6;
+    padding: 0 24px;
+}
+
+/* --- Типографика --- */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     letter-spacing: 0.5px;
+    color: var(--primary-dark);
+    line-height: 1.3;
 }
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 1.8em; margin-bottom: 24px; }
+h3 { font-size: 1.3em; margin: 24px 0 16px; color: var(--primary); }
 
 p {
     font-size: 16px;
-    line-height: 1.6;
-    color: #2c3e50;
-    margin-bottom: 15px;
+    line-height: 1.7;
+    color: var(--gray-600);
+    margin-bottom: 16px;
 }
 
-/* --- Селектор идентификатора --- */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: var(--primary-light);
+}
+
+section {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+    transition: box-shadow 0.2s;
+}
+
+section:hover {
+    box-shadow: var(--shadow-md);
+}
+
 #about {
-    background: linear-gradient(135deg, #f5f7fa 0%, #e9eef5 100%);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
 }
 
 #studies {
-    background-color: #ffffff;
-    border-left: 5px solid #1e3a8a;
-    padding: 25px;
-    margin: 30px 0;
+    border-left: 5px solid var(--primary);
 }
 
-/* --- Селектор класса --- */
-.course-badge {
+nav {
+    margin: 24px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    background: var(--white);
+    border-radius: var(--radius-full);
+    transition: all 0.2s;
+    border: 1px solid var(--gray-200);
+}
+
+nav ul li:hover {
+    background: var(--gray-100);
+    transform: translateY(-2px);
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 24px;
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    border-radius: var(--radius-full);
+}
+
+nav ul li:first-child a {
+    background: var(--accent);
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+nav ul li:last-child a {
+    border: 2px solid var(--primary);
+}
+
+.course-badge, .badge {
     display: inline-block;
-    background-color: #ff6b6b !important; /* !important */
-    color: white !important;
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 2px solid transparent;
+}
+
+.course-badge {
+    background: var(--primary);
+    color: var(--white);
 }
 
 .badge {
-    background-color: #4ecdc4;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-style: italic;
+    background: var(--accent);
+    color: var(--primary-dark);
 }
 
-/* --- Селектор атрибутный --- */
-a[target="_blank"] {
-    color: #e63946;
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom: 2px dotted #e63946;
-    padding-bottom: 2px;
-}
-
-a[href^="mailto:"] {
-    color: #2a9d8f;
-    font-family: 'Courier New', monospace;
+input, select, textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-md);
     font-size: 15px;
-    background-color: #e9f5f2;
-    padding: 4px 8px;
-    border-radius: 4px;
+    transition: all 0.2s;
+    background: var(--white);
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"] {
-    border: 2px solid #b0c4de;
-    border-radius: 6px;
-    padding: 10px;
-    font-size: 15px;
-    transition: all 0.3s;
+input:hover, select:hover, textarea:hover {
+    border-color: var(--gray-300);
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus {
-    border-color: #1e3a8a;
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary);
     outline: none;
     box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
 }
 
-/* --- Селекторы псевдо-классов --- */
-nav ul li:first-child a {
-    background-color: #ffd700;
-    color: #1e3a8a;
-    font-weight: 900;
+input[type="color"] {
+    width: 100px;
+    height: 50px;
+    padding: 4px;
 }
 
-nav ul li:last-child a {
-    border: 2px solid #1e3a8a;
+input[type="range"] {
+    padding: 0;
+    height: 8px;
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
 }
 
-nav ul li:nth-child(2) a:hover {
-    background-color: #1e3a8a;
-    color: white;
-    transform: scale(1.05);
+input:required {
+    border-left: 6px solid var(--error);
 }
 
-/* --- Псевдо-элементы из презентации --- */
-p::first-letter {
-    color: #ff0000;
-    font-size: xx-large;
-    font-weight: bold;
-    float: left;
-    margin-right: 6px;
-    line-height: 1;
+input:optional {
+    border-left: 6px solid var(--success);
 }
 
-p::first-line {
-    color: #0000ff;
-    font-variant: small-caps;
+/* --- Кнопки --- */
+button, 
+[type="submit"],
+[type="reset"],
+[type="button"] {
+    border: none;
+    padding: 12px 28px;
     font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--white);
+    background: var(--primary);
+    border-radius: var(--radius-full);
+    font-size: 15px;
 }
 
-/* Дополнительные псевдо-элементы */
-h2::before {
-    content: "▹ ";
-    color: #1e3a8a;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #1e3a8a;
-    margin-top: 8px;
-}
-
-/* --- Комбинации селекторов --- */
-header > hgroup > h1 {
-    font-size: 2.5em;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    color: #fff;
-    letter-spacing: 2px;
-}
-
-main section + section {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 2px dashed #cbd5e1;
-}
-
-.student-info figure figcaption {
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    color: #64748b;
-    border-bottom: 1px solid #cbd5e1;
-    padding-bottom: 5px;
-}
-
-/* --- CSS Box Model --- */
-p.one {
-    border-style: solid;
-    border-width: 5px;
-    border-color: #1e3a8a;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 20px 0;
-    background-color: #f8fafc;
-}
-
-p.two {
-    border-style: solid;
-    border-width: medium;
-    border-color: #e63946;
-    border-radius: 4px;
-    padding: 12px;
-    margin: 15px 0;
-}
-
-/* --- Outline  --- */
-.outline-demo {
-    border: 1px solid red;
-    outline: green dotted thick;
-    outline-offset: 4px;
-    padding: 20px;
-    margin: 25px 0;
-}
-
-/* --- Margin и Padding  --- */
-.margin-demo {
-    margin: 100px 50px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-right: 50px;
-    padding-left: 50px;
-    background-color: #e0e7ff;
-    border: 1px solid #1e3a8a;
-}
-
-/* --- Background стили --- */
-.bg-gradient {
-    background: linear-gradient(45deg, #1e3a8a, #3b82f6);
-    color: white;
-    padding: 25px;
-    border-radius: 10px;
-}
-
-.bg-pattern {
-    background-image: radial-gradient(circle at 10px 10px, #ffffff 2px, transparent 2px);
-    background-size: 20px 20px;
-    background-color: #1e3a8a;
-    color: white;
-    padding: 20px;
-}
-
-/* --- Text стили --- */
-.text-demo {
-    text-align: justify;
-    text-transform: uppercase;
-    text-decoration: underline wavy #1e3a8a;
-    text-indent: 30px;
-    word-spacing: 5px;
-    letter-spacing: 1px;
-}
-
-/* --- Font стили --- */
-.font-demo {
-    font-family: 'Courier New', monospace;
-    font-size: 18px;
-    font-weight: 700;
-    font-style: oblique;
-    font-variant: small-caps;
-    line-height: 2;
-}
-
-/* --- Links стили --- */
-.link-custom {
-    color: #8b5cf6;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-    display: inline-block;
-}
-
-.link-custom:hover {
-    color: #6d28d9;
+button:hover,
+[type="submit"]:hover,
+[type="button"]:hover {
+    background: var(--primary-dark);
     transform: translateY(-2px);
-    text-decoration: underline;
+    box-shadow: var(--shadow-md);
 }
 
-.link-custom:visited {
-    color: #a78bfa;
+[type="reset"] {
+    background: var(--gray-600);
 }
 
-/* --- Lists стили  --- */
+[type="reset"]:hover {
+    background: var(--gray-900);
+}
+
+.table-styled {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    margin: 24px 0;
+}
+
+.table-styled thead tr {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.table-styled th,
+.table-styled td {
+    padding: 14px 16px;
+    border: 1px solid var(--gray-200);
+    text-align: left;
+}
+
+.table-styled tbody tr:nth-of-type(even) {
+    background: var(--gray-50);
+}
+
+.table-styled tbody tr:hover {
+    background: var(--accent-soft);
+    transition: 0.2s;
+}
+
 ul.custom-list {
-    list-style-type: square;
-    list-style-position: inside;
-    list-style-image: none;
-    padding-left: 20px;
+    list-style: none;
+    padding-left: 0;
 }
 
 ul.custom-list li {
-    display: list-item;
-    margin: 10px 0;
-    padding-left: 25px;
+    margin: 12px 0;
+    padding-left: 28px;
     position: relative;
 }
 
-ul.custom-list li::marker {
-    color: #1e3a8a;
-    font-size: 1.2em;
+ul.custom-list li::before {
+    content: "✓";
+    color: var(--primary);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
 }
 
 ol.roman-list {
     list-style-type: upper-roman;
-    list-style-position: outside;
-    margin-left: 30px;
+    padding-left: 30px;
 }
 
-/* Стиль списка: li {display:inline;} */
+/* --- Инлайн меню --- */
 .inline-menu {
     list-style: none;
     padding: 0;
-    margin: 20px 0;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .inline-menu li {
-    display: inline;
-    margin-right: 20px;
-    padding: 8px 16px;
-    background-color: #e0e7ff;
-    border-radius: 20px;
+    background: var(--white);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--gray-200);
 }
 
-/* Стиль : span {display:block;} */
+.inline-menu li:hover {
+    background: var(--gray-100);
+}
+
+.inline-menu a {
+    display: block;
+    padding: 10px 24px;
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+    border-radius: var(--radius-full);
+}
+
+/* --- Блоки --- */
 span.block-demo {
     display: block;
-    background-color: #fef9c3;
-    padding: 10px;
-    margin: 5px 0;
-    border-left: 4px solid #eab308;
+    background: var(--accent-soft);
+    padding: 12px 16px;
+    margin: 8px 0;
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius-sm);
 }
 
-/* --- Размеры  --- */
-.size-demo {
-    width: 80%;
-    max-width: 600px;
-    min-width: 300px;
+img {
+    max-width: 100%;
     height: auto;
-    min-height: 100px;
-    max-height: 300px;
-    overflow: auto;
-    border: 1px solid #ccc;
-    padding: 15px;
+    border-radius: var(--radius-md);
 }
 
-/* --- Отображение (Display) --- */
-.hidden-demo {
-    visibility: hidden;
-}
-
-.none-demo {
-    display: none;
-}
-
-/* --- Позиционирование --- */
-.position-relative {
-    position: relative;
-    top: 20px;
-    left: 30px;
-    background-color: #ede9fe;
-    padding: 15px;
-    margin-bottom: 40px;
-}
-
-.position-absolute {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background-color: #fee2e2;
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 10;
-}
-
-.position-fixed-demo {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #1e3a8a;
-    color: white;
-    padding: 15px 25px;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    z-index: 999;
-}
-
-.position-static-demo {
-    position: static;
-    background-color: #f1f5f9;
-    padding: 10px;
-}
-
-/* --- Float  --- */
 .float-right {
     float: right;
-    margin: 0 0 20px 20px;
-    width: 150px;
-    height: auto;
-    border: 3px solid #1e3a8a;
-    border-radius: 8px;
+    margin: 0 0 20px 24px;
+    max-width: 200px;
+    border: 3px solid var(--primary);
+    border-radius: var(--radius-md);
 }
 
 .clearfix::after {
@@ -378,75 +334,90 @@ span.block-demo {
     clear: both;
 }
 
-/* --- Overflow и Cursor  --- */
-.overflow-demo {
-    width: 300px;
-    height: 100px;
-    overflow: scroll;
-    overflow-x: hidden;
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #f9fafb;
+figure {
+    margin: 0;
 }
 
-.cursor-demo {
-    cursor: pointer;
-    transition: cursor 0.3s;
-}
-
-.cursor-demo:hover {
-    cursor: help;
-}
-
-/* --- Clip  --- */
-.clip-demo {
-    position: absolute;
-    clip: rect(0px, 100px, 100px, 0px);
-    background-color: #1e3a8a;
-    color: white;
-    padding: 20px;
-}
-
-/* --- Table стили --- */
-.table-styled {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
+figure figcaption {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: var(--gray-600);
+    margin-top: 8px;
     font-size: 0.9em;
-    font-family: sans-serif;
-    box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
 
-.table-styled thead tr {
-    background-color: #1e3a8a;
-    color: white;
-    text-align: left;
+.bg-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: var(--white);
+    padding: 32px;
+    border-radius: var(--radius-lg);
 }
 
-.table-styled th,
-.table-styled td {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
+.margin-demo {
+    margin: 40px 0;
+    padding: 32px;
+    background: var(--gray-100);
+    border: 1px solid var(--primary);
+    border-radius: var(--radius-lg);
 }
 
-.table-styled tbody tr {
-    border-bottom: 1px solid #dddddd;
+.size-demo {
+    width: 100%;
+    max-width: 600px;
+    min-height: 100px;
+    padding: 24px;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    background: var(--white);
 }
 
-.table-styled tbody tr:nth-of-type(even) {
-    background-color: #f3f4f6;
+.overflow-demo {
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 20px;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    background: var(--white);
 }
 
-.table-styled tbody tr:last-of-type {
-    border-bottom: 2px solid #1e3a8a;
+.position-relative {
+    position: relative;
+    top: 20px;
+    background: var(--gray-100);
+    padding: 24px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-200);
 }
 
-.table-styled tbody tr:hover {
-    background-color: #e0e7ff;
-    transition: 0.2s;
+.position-fixed-demo {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--primary);
+    color: var(--white);
+    padding: 14px 28px;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-lg);
+    z-index: 999;
+    border: 1px solid var(--white);
 }
 
-/* --- Селектор псевдо-элемента для счетчика --- */
+h2::before {
+    content: "▹ ";
+    color: var(--primary);
+    font-weight: bold;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin-top: 8px;
+    border-radius: var(--radius-full);
+}
+
 section {
     counter-reset: section-counter;
 }
@@ -458,27 +429,115 @@ section h2 {
 section h2::before {
     content: "Раздел " counter(section-counter) ": ";
     font-size: 0.7em;
-    color: #64748b;
+    color: var(--gray-600);
     font-weight: normal;
 }
 
-/* --- Медиа-запросы --- */
+a[target="_blank"] {
+    color: var(--error);
+    font-weight: bold;
+    border-bottom: 2px dotted var(--error);
+    padding-bottom: 2px;
+}
+
+a[href^="mailto:"] {
+    color: var(--success);
+    background: #e9f5f2;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+}
+
+.link-custom {
+    color: var(--primary-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.link-custom:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+footer {
+    background: linear-gradient(to right, var(--gray-900), var(--primary-dark));
+    color: var(--white);
+    padding: 40px 32px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    margin-top: 48px;
+}
+
+footer p {
+    color: var(--gray-200);
+}
+
+footer a {
+    color: var(--accent);
+}
+
+footer a:hover {
+    color: var(--white);
+}
+
+address {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--accent);
+    color: var(--gray-200);
+    font-style: normal;
+    margin: 20px 0;
+}
+
 @media screen and (max-width: 768px) {
     body {
-        padding: 10px;
+        padding: 16px;
     }
     
+    section {
+        padding: 24px;
+    }
+    
+    .inline-menu,
     nav ul {
         flex-direction: column;
-        gap: 10px;
-        align-items: center;
+        width: 100%;
     }
     
-    .student-info {
-        flex-direction: column;
+    .inline-menu li,
+    nav ul li {
+        width: 100%;
+        text-align: center;
     }
     
     h1 {
         font-size: 1.8em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    .float-right {
+        float: none;
+        margin: 0 auto 24px;
+        display: block;
+    }
+    
+    .table-styled {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    section {
+        padding: 20px;
+    }
+    
+    .course-badge, .badge {
+        display: block;
+        margin: 8px 0;
+        text-align: center;
     }
 }
