@@ -398,6 +398,32 @@
                 </footer>
             </article>
         </section>
+        <!-- Чат и карта -->
+        <section style="margin-top: 40px;">
+            <h2 class="form-header">Чат с автором</h2>
+            
+            <!-- Leaflet CSS и JS -->
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+            
+            <!-- Карта -->
+            <div id="map" style="height: 300px; border-radius: var(--radius-lg); margin-bottom: 24px;"></div>
+            
+            <!-- Чат -->
+            <div style="background: var(--gray-50); border-radius: var(--radius-lg); padding: 20px;">
+                <div id="chat-messages" style="height: 200px; overflow-y: auto; margin-bottom: 16px; padding: 12px; background: var(--white); border-radius: var(--radius-md);"></div>
+                
+                <div style="display: flex; gap: 8px;">
+                    <input type="text" id="chat-input" placeholder="Напишите сообщение..." style="flex: 1;">
+                    <button id="chat-send" style="flex: 0; padding: 12px 24px;">→</button>
+                    <button id="voice-btn" style="flex: 0; background: var(--accent); color: var(--primary-dark);"></button>
+                </div>
+                <p style="font-size: 0.8em; color: var(--gray-600); margin-top: 8px;">* Автоответы на ключевые слова: привет, ВШЭ, МИЭМ, математика, проект</p>
+            </div>
+        </section>
+        
+        <!-- Подключение скрипта -->
+        <script src="script.js"></script>
     </main>
 
     <footer style="background: linear-gradient(to right, var(--gray-900), var(--primary-dark)); color: var(--white); padding: 40px 32px; border-radius: var(--radius-lg) var(--radius-lg) 0 0; margin-top: 48px;">
