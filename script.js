@@ -1,11 +1,11 @@
 window.onload = function() {
     // Инициализация карты Leaflet
     if (document.getElementById('map')) {
-        const map = L.map('map').setView([55.7961, 37.4911], 16);
+        const map = L.map('map').setView([55.8030, 37.4096], 16);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap'
         }).addTo(map);
-        L.marker([55.7961, 37.4911]).addTo(map)
+        L.marker([55.8030, 37.4096]).addTo(map)
             .bindPopup('МИЭМ НИУ ВШЭ');
     }
 
@@ -35,11 +35,9 @@ window.onload = function() {
         const text = chatInput.value.trim();
         if (!text) return;
 
-        // Сообщение пользователя
         addMessage(text, 'user');
         chatInput.value = '';
 
-        // Автоответ
         setTimeout(() => {
             let reply = keywords['по умолчанию'];
             const lowerText = text.toLowerCase();
@@ -64,21 +62,59 @@ window.onload = function() {
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    // Голосовое сообщение (фиктивное)
-    function sendVoice() {
-        addMessage('Голосовое сообщение (2 сек)', 'user');
-        setTimeout(() => {
-            addMessage('Распознано: "Привет, как дела?"', 'bot');
-        }, 500);
-    }
+    // Запись гс
+    let mediaRecorder;
+    let audioChunks = [];
 
-    // Обработчики событий
+    // Запрос доступа к микрофону при нажатии
+    voiceBtn.addEventListener('click', async () => {
+        if (mediaRecorder && mediaRecorder.state === 'recording') {
+            // Остановка записи
+            mediaRecorder.stop();
+            voiceBtn.textContent = 'записано';
+            voiceBtn.style.background = 'var(--accent)';
+        } else {
+            try {
+                // Запрос доступа к микрофону
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                
+                mediaRecorder = new MediaRecorder(stream);
+                audioChunks = [];
+
+                mediaRecorder.ondataavailable = event => {
+                    audioChunks.push(event.data);
+                };
+
+                mediaRecorder.onstop = () => {
+                    // Создаем аудиофайл (но никуда не отправляем)
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                    
+                    // Показываем сообщение о голосовом
+                    addMessage(' Голосовое сообщение записано', 'user');
+                    
+                    // Останавливаем все треки микрофона
+                    stream.getTracks().forEach(track => track.stop());
+                    
+                    // Автоответ на голосовое
+                    setTimeout(() => {
+                        addMessage(' Получил голосовое! Скоро послушаю', 'bot');
+                    }, 500);
+                };
+
+                mediaRecorder.start();
+                voiceBtn.textContent = 'запись';
+                voiceBtn.style.background = 'var(--error)';
+                
+            } catch (err) {
+                alert('Нет доступа к микрофону');
+                console.error(err);
+            }
+        }
+    });
+
+    // Обработчики для текстовых сообщений
     chatSend.addEventListener('click', sendMessage);
     chatInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') sendMessage();
     });
-    
-    if (voiceBtn) {
-        voiceBtn.addEventListener('click', sendVoice);
-    }
 };
