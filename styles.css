@@ -541,3 +541,28 @@ address {
         text-align: center;
     }
 }
+/* Стили для чата */
+#chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chat-message {
+    padding: 10px 16px;
+    border-radius: var(--radius-lg);
+    max-width: 80%;
+    word-break: break-word;
+}
+
+.user-message {
+    background: var(--primary);
+    color: var(--white);
+    align-self: flex-end;
+}
+
+.bot-message {
+    background: var(--gray-200);
+    color: var(--gray-900);
+    align-self: flex-start;
+}
