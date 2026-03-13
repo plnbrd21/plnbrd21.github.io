@@ -5,308 +5,512 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="https://plnbrd21.github.io/">
     <title>Я - студент ВШЭ | Бородушкина Полина</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <!-- Стили -->
     <link rel="stylesheet" href="styles.css">
+    
     <meta name="description" content="Сайт-портфолио студентки ВШЭ Полины Бородушкиной">
     <meta name="keywords" content="ВШЭ, МИЭМ, прикладная математика, студент, портфолио">
     <meta name="author" content="Бородушкина Полина">
     
     <style>
-        /* Минимальные дополнительные стили */
+        /* Дополнительные стили поверх Bootstrap */
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --primary-dark: #0f2b5e;
+            --accent: #fbbf24;
+            --accent-soft: #fef3c7;
+        }
+        
+        body {
+            background: var(--gray-50);
+        }
+        
+        .hse-header {
+            background: linear-gradient(145deg, var(--primary-dark), var(--primary));
+            border-bottom: 4px solid var(--accent);
+        }
+        
+        .course-badge {
+            background: var(--primary);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 9999px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .badge-accent {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+        
+        .student-photo {
+            border: 4px solid white;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        
         .highlight-text {
             background-color: var(--accent-soft);
             color: var(--primary-dark);
-            font-weight: bold;
             padding: 4px 12px;
-            border-radius: var(--radius-full);
+            border-radius: 9999px;
             border: 1px solid var(--accent);
-            display: inline-block;
+        }
+        
+        .table-styled {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .table-styled thead {
+            background: var(--primary);
+            color: white;
         }
         
         blockquote {
-            position: relative;
-            padding-left: 30px;
-            font-style: italic;
-            color: var(--gray-600);
-            margin: 24px 0;
             border-left: 4px solid var(--accent);
-        }
-        
-        [data-status="important"] {
-            background-color: #fee2e2;
-            border: 2px solid var(--error);
-            color: #7f1d1d;
-            padding: 16px;
-            border-radius: var(--radius-md);
-            font-weight: bold;
+            padding-left: 20px;
+            font-style: italic;
         }
         
         dialog {
             border: none;
-            border-radius: var(--radius-lg);
+            border-radius: 16px;
             padding: 32px;
             max-width: 450px;
-            background: var(--white);
-            box-shadow: var(--shadow-lg);
         }
         
         dialog::backdrop {
             background: rgba(0,0,0,0.5);
             backdrop-filter: blur(4px);
         }
+        
+        [data-status="important"] {
+            background-color: #fee2e2;
+            border: 2px solid #ef4444;
+            color: #7f1d1d;
+            padding: 16px;
+            border-radius: 12px;
+        }
     </style>
 </head>
 <body>
-    <!-- Шапка сайта -->
-    <header style="background: linear-gradient(145deg, var(--primary-dark), var(--primary)); border-bottom: 4px solid var(--accent); box-shadow: var(--shadow-md); padding: 40px 32px; border-radius: 0 0 var(--radius-xl) var(--radius-xl);">
-        <hgroup>
-            <h1 style="font-family: 'Times New Roman', serif; color: var(--white); text-shadow: 2px 2px 4px rgba(0,0,0,0.3); letter-spacing: 2px; margin-bottom: 8px; font-size: 2.8em;">Бородушкина Полина Андреевна</h1>
-            <h2 style="color: var(--accent); font-size: 1.5em; font-weight: 400; border-bottom: none; margin-bottom: 16px;">Студентка 4-го курса НИУ ВШЭ</h2>
-        </hgroup>
-        <p style="font-size: 1.1em; background-color: rgba(255,255,255,0.1); padding: 12px 28px; border-radius: var(--radius-full); display: inline-block; backdrop-filter: blur(10px);">
-            Прикладная математика 
-            <span class="course-badge">МИЭМ</span>
-            <span class="badge" style="background: var(--accent); color: var(--primary-dark);">Выпуск 2026</span>
-        </p>
+    <!-- Шапка сайта с Bootstrap классами -->
+    <header class="hse-header text-white py-5 px-4 rounded-bottom-4 shadow">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <hgroup>
+                        <h1 class="display-3 fw-bold text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Бородушкина Полина Андреевна</h1>
+                        <h2 class="h4 text-warning fw-normal mb-4">Студентка 4-го курса НИУ ВШЭ</h2>
+                    </hgroup>
+                    <p class="lead bg-white bg-opacity-10 d-inline-block py-2 px-4 rounded-pill backdrop-blur">
+                        Прикладная математика 
+                        <span class="course-badge ms-2">МИЭМ</span>
+                        <span class="badge-accent badge ms-2">Выпуск 2026</span>
+                    </p>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <!-- Навигация -->
-    <nav>
-        <ul class="inline-menu" style="background: transparent; padding: 0;">
-            <li><a href="index.html" style="background: var(--primary); color: var(--white);">Главная</a></li>
-            <li><a href="feedback.html">Обратная связь</a></li>
-            <li><a href="#data">Данные</a></li>
-            <li><a href="#media">Медиа</a></li>
-            <li><a href="#semantic">Семантика</a></li>
-        </ul>
-    </nav>
+    <!-- Bootstrap навигация -->
+    <div class="container my-4">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary rounded-4 shadow-sm">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="#about">Обо мне</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#studies">Учеба</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#data">Данные</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#media">Медиа</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#semantic">Исследования</a></li>
+                        <li class="nav-item"><a class="nav-link" href="feedback.html">Обратная связь</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
 
-    <!-- Основное содержимое -->
-    <main>
+    <!-- Основное содержимое с Bootstrap контейнером и сеткой -->
+    <main class="container">
         <!-- Секция: Обо мне -->
-        <section id="about">
-            <h2 style="color: var(--primary-dark); border-bottom: none; display: inline-block; margin-bottom: 24px;">Обо мне</h2>
-            <div class="student-info clearfix">
-                <figure style="margin: 0 0 20px 24px; float: right; max-width: 200px;">
-                    <img src="images/avatar.jpg" 
-                         alt="Фотография студента" 
-                         class="student-photo"
-                         width="200" 
-                         height="200"
-                         loading="lazy"
-                         style="border: 4px solid var(--white); border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
-                    <figcaption style="text-align: center; margin-top: 12px;">Полина Бородушкина, 2026 г.</figcaption>
-                </figure>
-                <div>
-                    <p style="font-size: 1.1em; line-height: 1.8; background: var(--gray-50); padding: 24px; border-radius: var(--radius-lg);">Привет! Меня зовут <strong style="color: var(--primary);">Бородушкина Полина</strong>. Я учусь на 4 курсе образовательной программы <b>«Прикладная математика»</b> в <a href="https://www.hse.ru" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 700; border-bottom: 2px solid var(--accent);">Национальном исследовательском университете «Высшая школа экономики»</a>.</p>
-                    <p><em style="color: var(--primary); font-size: 1.1em;">Моя специализация:</em> <i style="color: var(--primary-dark); font-weight: 600;">математическое моделирование</i>.</p>
+        <section id="about" class="row g-4 p-4 mb-4 bg-white rounded-4 shadow-sm">
+            <div class="col-lg-8">
+                <h2 class="h2 fw-bold text-primary-dark mb-4">Обо мне</h2>
+                <div class="student-info">
+                    <p class="lead fs-5 p-4 bg-light rounded-4">
+                        Привет! Меня зовут <strong class="text-primary">Бородушкина Полина</strong>. 
+                        Я учусь на 4 курсе образовательной программы <b>«Прикладная математика»</b> 
+                        в <a href="https://www.hse.ru" target="_blank" rel="noopener noreferrer" 
+                              class="text-primary fw-bold text-decoration-underline-warning">
+                            Национальном исследовательском университете «Высшая школа экономики»
+                        </a>.
+                    </p>
+                    <p class="fs-5">
+                        <em class="text-primary">Моя специализация:</em> 
+                        <i class="text-primary-dark fw-semibold">математическое моделирование</i>.
+                    </p>
                     
                     <!-- Диалоговое окно -->
-                    <dialog id="infoDialog">
-                        <h4 style="color: var(--primary); font-size: 1.5em; margin-bottom: 16px;">Информация</h4>
-                        <p style="margin-bottom: 24px;">Студентка 4 курса МИЭМ НИУ ВШЭ</p>
-                        <button onclick="document.getElementById('infoDialog').close()" style="background: var(--error); color: var(--white); border: none; padding: 12px 28px; border-radius: var(--radius-full); font-weight: bold; cursor: pointer;">Закрыть</button>
+                    <dialog id="infoDialog" class="rounded-4">
+                        <h4 class="text-primary fs-3 mb-3">Информация</h4>
+                        <p class="mb-4">Студентка 4 курса МИЭМ НИУ ВШЭ</p>
+                        <button onclick="document.getElementById('infoDialog').close()" 
+                                class="btn btn-danger px-4 py-2 rounded-pill fw-bold">
+                            Закрыть
+                        </button>
                     </dialog>
-                    <button onclick="document.getElementById('infoDialog').showModal()" style="background: var(--primary); color: var(--white); border: none; padding: 14px 32px; border-radius: var(--radius-full); font-size: 1em; font-weight: bold; cursor: pointer; margin-top: 16px;">
+                    <button onclick="document.getElementById('infoDialog').showModal()" 
+                            class="btn btn-primary px-4 py-3 rounded-pill fw-semibold mt-3">
                         Показать информацию
                     </button>
                 </div>
             </div>
+            <div class="col-lg-4">
+                <figure class="text-center">
+                    <img src="images/avatar.jpg" 
+                         alt="Фотография студента" 
+                         class="student-photo img-fluid rounded-4 shadow"
+                         width="300" 
+                         height="300"
+                         loading="lazy">
+                    <figcaption class="mt-3 text-muted fst-italic">Полина Бородушкина, 2026 г.</figcaption>
+                </figure>
+            </div>
         </section>
 
         <!-- Секция: Учеба -->
-        <section id="studies">
-            <h2>Моя учеба в ВШЭ</h2>
+        <section id="studies" class="row g-4 p-4 mb-4 bg-white rounded-4 shadow-sm border-start border-5 border-primary">
+            <div class="col-12">
+                <h2 class="h2 fw-bold text-primary-dark mb-4">Моя учеба в ВШЭ</h2>
+            </div>
             
-            <h3>Ключевые дисциплины:</h3>
-            <ol class="roman-list" style="background: var(--gray-50); padding: 24px 24px 24px 48px; border-radius: var(--radius-lg);">
-                <li style="margin-bottom: 12px;">Математический анализ</li>
-                <li style="margin-bottom: 12px;">Дифференциальные уравнения</li>
-                <li style="margin-bottom: 12px;">Теория вероятностей</li>
-                <li style="margin-bottom: 12px;">Численные методы</li>
-            </ol>
+            <div class="col-md-6">
+                <h3 class="h4 fw-semibold mb-3">Ключевые дисциплины:</h3>
+                <ol class="list-unstyled bg-light p-4 rounded-4">
+                    <li class="mb-3 ps-4 position-relative">
+                        <span class="position-absolute start-0 text-primary fw-bold">I.</span>
+                        Математический анализ
+                    </li>
+                    <li class="mb-3 ps-4 position-relative">
+                        <span class="position-absolute start-0 text-primary fw-bold">II.</span>
+                        Дифференциальные уравнения
+                    </li>
+                    <li class="mb-3 ps-4 position-relative">
+                        <span class="position-absolute start-0 text-primary fw-bold">III.</span>
+                        Теория вероятностей
+                    </li>
+                    <li class="mb-3 ps-4 position-relative">
+                        <span class="position-absolute start-0 text-primary fw-bold">IV.</span>
+                        Численные методы
+                    </li>
+                </ol>
+            </div>
             
-            <h3>Термины:</h3>
-            <dl style="background: var(--white); padding: 24px; border-radius: var(--radius-lg); border: 1px solid var(--gray-200);">
-                <dt style="font-weight: 700; color: var(--primary); font-size: 1.1em; margin-top: 8px;">МИЭМ</dt>
-                <dd style="margin-left: 24px; padding-left: 16px; border-left: 4px solid var(--accent); margin-bottom: 16px;">Московский институт электроники и математики</dd>
-                <dt style="font-weight: 700; color: var(--primary); font-size: 1.1em;">ВШЭ</dt>
-                <dd style="margin-left: 24px; padding-left: 16px; border-left: 4px solid var(--accent);">НИУ «Высшая школа экономики»</dd>
-            </dl>
+            <div class="col-md-6">
+                <h3 class="h4 fw-semibold mb-3">Термины:</h3>
+                <dl class="bg-light p-4 rounded-4 border">
+                    <dt class="fw-bold text-primary fs-5 mt-2">МИЭМ</dt>
+                    <dd class="ms-4 ps-3 border-start border-4 border-warning mb-4">
+                        Московский институт электроники и математики
+                    </dd>
+                    <dt class="fw-bold text-primary fs-5">ВШЭ</dt>
+                    <dd class="ms-4 ps-3 border-start border-4 border-warning">
+                        НИУ «Высшая школа экономики»
+                    </dd>
+                </dl>
+            </div>
             
-            <ul class="custom-list">
-                <li><strong>Факультет:</strong> МИЭМ им. А.Н. Тихонова</li>
-                <li><strong>Программа:</strong> Прикладная математика</li>
-                <li><strong>Статус:</strong> Студент 4-го курса (выпуск <time datetime="2026-06-30" style="color: var(--primary); font-weight: bold;">июнь 2026</time>)</li>
-                <li><strong>Средний балл:</strong> <data value="9.33" style="background: var(--accent); color: var(--primary-dark); padding: 4px 12px; border-radius: var(--radius-full); font-weight: bold;">9.33</data></li>
-            </ul>
+            <div class="col-12">
+                <ul class="list-unstyled bg-light p-4 rounded-4">
+                    <li class="mb-3 ps-4 position-relative">
+                        <span class="position-absolute start-0 text-primary fw-bold">✓</span>
+                        <strong>Факультет:</strong> МИЭМ им. А.Н. Тихонова
+                    </li>
+                    <li class="mb-3 ps-4 position-relative">
+                        <span class="position-absolute start-0 text-primary fw-bold">✓</span>
+                        <strong>Программа:</strong> Прикладная математика
+                    </li>
+                    <li class="mb-3 ps-4 position-relative">
+                        <span class="position-absolute start-0 text-primary fw-bold">✓</span>
+                        <strong>Статус:</strong> Студент 4-го курса (выпуск 
+                        <time datetime="2026-06-30" class="text-primary fw-bold">июнь 2026</time>)
+                    </li>
+                    <li class="mb-3 ps-4 position-relative">
+                        <span class="position-absolute start-0 text-primary fw-bold">✓</span>
+                        <strong>Средний балл:</strong> 
+                        <data value="9.33" class="badge-accent badge rounded-pill">9.33</data>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-12">
+                <hr class="my-4" style="height: 2px; background: linear-gradient(to right, var(--primary), var(--accent), var(--primary));">
+            </div>
             
-            <hr style="border: 0; height: 2px; background: linear-gradient(to right, var(--primary), var(--accent), var(--primary)); margin: 40px 0; border-radius: var(--radius-full);">
-            
-            <h3>Успеваемость по семестрам</h3>
-            <table class="table-styled">
-                <caption style="caption-side: bottom; margin-top: 12px; font-style: italic; color: var(--gray-600);">Средний балл по семестрам</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Курс</th>
-                        <th scope="col">1 семестр</th>
-                        <th scope="col">2 семестр</th>
-                        <th scope="col">Средний</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1 курс</th>
-                        <td>8.7</td>
-                        <td>8.9</td>
-                        <td>8.8</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2 курс</th>
-                        <td>9.0</td>
-                        <td>9.1</td>
-                        <td>9.05</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3 курс</th>
-                        <td>9.2</td>
-                        <td>9.3</td>
-                        <td>9.25</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th scope="row">Итого</th>
-                        <td colspan="2">Общий средний балл</td>
-                        <td style="font-weight: 700; color: var(--primary-dark); background: var(--accent-soft);">9.03</td>
-                    </tr>
-                </tfoot>
-            </table>
-            
-            <p><small style="color: var(--gray-600);">Таблица успеваемости за 3 года обучения</small></p>
+            <div class="col-12">
+                <h3 class="h4 fw-semibold mb-3">Успеваемость по семестрам</h3>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover rounded-4 overflow-hidden shadow-sm">
+                        <caption class="mt-2 text-muted fst-italic">
+                            Средний балл по семестрам
+                        </caption>
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th scope="col">Курс</th>
+                                <th scope="col">1 семестр</th>
+                                <th scope="col">2 семестр</th>
+                                <th scope="col">Средний</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1 курс</th>
+                                <td>8.7</td>
+                                <td>8.9</td>
+                                <td>8.8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2 курс</th>
+                                <td>9.0</td>
+                                <td>9.1</td>
+                                <td>9.05</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3 курс</th>
+                                <td>9.2</td>
+                                <td>9.3</td>
+                                <td>9.25</td>
+                            </tr>
+                        </tbody>
+                        <tfoot class="table-warning">
+                            <tr>
+                                <th scope="row">Итого</th>
+                                <td colspan="2">Общий средний балл</td>
+                                <td class="fw-bold text-primary-dark">9.03</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <p class="text-muted small">Таблица успеваемости за 3 года обучения</p>
+            </div>
+
+            <!-- Plotly диаграмма -->
+            <div class="col-12 mt-4">
+                <h3 class="h4 fw-semibold mb-3">Динамика успеваемости</h3>
+                <div id="gradesChart" class="w-100" style="height: 400px;"></div>
+            </div>
         </section>
 
         <!-- Секция: Данные и программирование -->
-        <section id="data">
-            <h2>Программирование и данные</h2>
-            
-            <!-- Canvas -->
-            <h3>Пример canvas:</h3>
-            <canvas id="myCanvas" width="300" height="150" style="border: 3px solid var(--primary); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); max-width: 100%;">
-                Ваш браузер не поддерживает canvas.
-            </canvas>
-            
-            <!-- SVG -->
-            <h3>Пример SVG:</h3>
-            <div style="margin-bottom: 24px;">
-                <svg width="220" height="120" xmlns="http://www.w3.org/2000/svg" style="border: 2px dashed var(--primary); border-radius: var(--radius-lg); padding: 5px; background: var(--white);">
-                    <rect width="170" height="80" x="25" y="20" rx="15" ry="15" fill="var(--primary)" style="filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.2));" />
-                    <circle cx="110" cy="60" r="25" fill="var(--accent)" />
-                    <text x="95" y="70" fill="white" font-size="14" font-weight="bold" font-family="Arial">ВШЭ</text>
-                    <text x="85" y="95" fill="var(--primary)" font-size="10">МИЭМ</text>
-                </svg>
+        <section id="data" class="row g-4 p-4 mb-4 bg-white rounded-4 shadow-sm">
+            <div class="col-12">
+                <h2 class="h2 fw-bold text-primary-dark mb-4">Программирование и данные</h2>
             </div>
             
-            <script>
-                const canvas = document.getElementById('myCanvas');
-                if (canvas.getContext) {
-                    const ctx = canvas.getContext('2d');
-                    const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-                    gradient.addColorStop(0, '#1e3a8a');
-                    gradient.addColorStop(1, '#3b82f6');
-                    
-                    ctx.fillStyle = gradient;
-                    ctx.fillRect(20, 20, 260, 110);
-                    ctx.shadowColor = 'rgba(0,0,0,0.3)';
-                    ctx.shadowBlur = 6;
-                    ctx.shadowOffsetX = 3;
-                    ctx.shadowOffsetY = 3;
-                    ctx.fillStyle = 'white';
-                    ctx.font = 'bold 18px Arial';
-                    ctx.fillText('Я - студент ВШЭ', 55, 85);
-                    ctx.shadowBlur = 0;
-                }
-            </script>
+            <div class="col-md-6">
+                <h3 class="h4 fw-semibold mb-3">Пример canvas:</h3>
+                <canvas id="myCanvas" width="300" height="150" 
+                        class="border border-3 border-primary rounded-4 shadow-sm w-100">
+                    Ваш браузер не поддерживает canvas.
+                </canvas>
+            </div>
+            
+            <div class="col-md-6">
+                <h3 class="h4 fw-semibold mb-3">Пример SVG:</h3>
+                <div class="mb-3">
+                    <svg width="220" height="120" xmlns="http://www.w3.org/2000/svg" 
+                         class="border border-2 border-primary border-dashed rounded-4 p-1 bg-white">
+                        <rect width="170" height="80" x="25" y="20" rx="15" ry="15" 
+                              fill="#1e3a8a" style="filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.2));" />
+                        <circle cx="110" cy="60" r="25" fill="#fbbf24" />
+                        <text x="95" y="70" fill="white" font-size="14" font-weight="bold" font-family="Arial">ВШЭ</text>
+                        <text x="85" y="95" fill="#1e3a8a" font-size="10">МИЭМ</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <script>
+                    const canvas = document.getElementById('myCanvas');
+                    if (canvas.getContext) {
+                        const ctx = canvas.getContext('2d');
+                        const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+                        gradient.addColorStop(0, '#1e3a8a');
+                        gradient.addColorStop(1, '#3b82f6');
+                        
+                        ctx.fillStyle = gradient;
+                        ctx.fillRect(20, 20, 260, 110);
+                        ctx.shadowColor = 'rgba(0,0,0,0.3)';
+                        ctx.shadowBlur = 6;
+                        ctx.shadowOffsetX = 3;
+                        ctx.shadowOffsetY = 3;
+                        ctx.fillStyle = 'white';
+                        ctx.font = 'bold 18px Arial';
+                        ctx.fillText('Я - студент ВШЭ', 55, 85);
+                        ctx.shadowBlur = 0;
+                    }
+                </script>
+            </div>
+            
             <noscript>
-                <p style="color: var(--error); background: #fee; padding: 16px; border-radius: var(--radius-md); border-left: 6px solid var(--error);">
-                    Ваш браузер не поддерживает JavaScript или он отключен.
-                </p>
+                <div class="col-12">
+                    <div class="alert alert-danger" role="alert">
+                        Ваш браузер не поддерживает JavaScript или он отключен.
+                    </div>
+                </div>
             </noscript>
             
-            <h3>Языки программирования:</h3>
-            <input list="languages" placeholder="Выберите язык" style="width: 100%; padding: 14px 20px; border: 2px solid var(--primary); border-radius: var(--radius-full); font-size: 1em; margin-bottom: 16px;">
-            <datalist id="languages">
-                <option value="Python">
-                <option value="C++">
-                <option value="JavaScript">
-            </datalist>
+            <div class="col-md-6">
+                <h3 class="h4 fw-semibold mb-3">Языки программирования:</h3>
+                <input list="languages" class="form-control form-control-lg rounded-pill border-2 border-primary mb-3" 
+                       placeholder="Выберите язык">
+                <datalist id="languages">
+                    <option value="Python">
+                    <option value="C++">
+                    <option value="JavaScript">
+                </datalist>
+            </div>
         </section>
 
         <!-- Секция: Медиа -->
-        <section id="media">
-            <h2>Медиа-контент</h2>
+        <section id="media" class="row g-4 p-4 mb-4 bg-white rounded-4 shadow-sm">
+            <div class="col-12">
+                <h2 class="h2 fw-bold text-primary-dark mb-4">Медиа-контент</h2>
+            </div>
             
-            <h3>Международный гимн студентов:</h3>
-            <audio controls style="width: 100%; margin: 16px 0; border-radius: var(--radius-full); background: var(--gray-100); padding: 4px;">
-                <source src="images/anthem.mp3" type="audio/mpeg">
-                Ваш браузер не поддерживает аудио.
-            </audio>
+            <div class="col-md-6">
+                <h3 class="h4 fw-semibold mb-3">Международный гимн студентов:</h3>
+                <audio controls class="w-100 mb-4">
+                    <source src="images/anthem.mp3" type="audio/mpeg">
+                    Ваш браузер не поддерживает аудио.
+                </audio>
+            </div>
             
-            <h3>Видео-презентация:</h3>
-            <video width="400" controls poster="poster.jpg" style="border: 4px solid var(--primary); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); max-width: 100%;">
-                <source src="images/video.mp4" type="video/mp4">
-                Ваш браузер не поддерживает видео.
-            </video>
+            <div class="col-md-6">
+                <h3 class="h4 fw-semibold mb-3">Видео-презентация:</h3>
+                <video width="400" controls poster="poster.jpg" 
+                       class="img-fluid border border-4 border-primary rounded-4 shadow-lg">
+                    <source src="images/video.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
             
-            <h3>Корпуса университета:</h3>
-            <picture>
-                <img src="images/campus-small.jpg" alt="Кампусы ВШЭ" style="width:100%; border-radius: var(--radius-lg); border: 4px solid var(--white); box-shadow: var(--shadow-md);">
-            </picture>
+            <div class="col-12">
+                <h3 class="h4 fw-semibold mb-3">Корпуса университета:</h3>
+                <picture>
+                    <img src="images/campus-small.jpg" alt="Кампусы ВШЭ" 
+                         class="img-fluid rounded-4 border border-4 border-white shadow">
+                </picture>
+            </div>
         </section>
 
         <!-- Секция: Семантические элементы -->
-        <section id="semantic">
-            <h2>Исследования</h2>
+        <section id="semantic" class="row g-4 p-4 mb-4 bg-white rounded-4 shadow-sm">
+            <div class="col-12">
+                <h2 class="h2 fw-bold text-primary-dark mb-4">Исследования</h2>
+            </div>
             
-            <article style="background: var(--white); border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200); margin-bottom: 32px;">
-                <header style="border-bottom: 2px solid var(--gray-200); padding-bottom: 16px; margin-bottom: 16px;">
-                    <h3 style="color: var(--primary-dark); font-size: 1.5em;">Методика поиска уязвимостей в ПО</h3>
-                    <p style="color: var(--gray-600);"><time datetime="2026-02-10" style="color: var(--primary);">май 2025</time></p>
-                </header>
-                <details style="background: var(--gray-50); padding: 20px; border-radius: var(--radius-md);">
-                    <summary style="font-weight: bold; color: var(--primary); cursor: pointer; font-size: 1.1em;">Подробнее</summary>
-                    <div class="overflow-demo" style="margin-top: 16px;">
-                        <p style="margin: 0;">Методика для поиска уязвимостей в ПО, написанном на нескольких языках программирования (С, С++, Java, Python, Go).</p>
-                    </div>
-                </details>
-                <footer style="margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--gray-200);">
-                    <p style="color: var(--gray-600);"><strong>Авторы:</strong> Позин Б.А., Бородушкина П.А., Коротков Д.А., Федоров М.А., Муратов А.Ф.</p>
-                </footer>
-            </article>
+            <div class="col-12">
+                <article class="bg-white rounded-4 p-4 shadow-sm border">
+                    <header class="border-bottom pb-3 mb-3">
+                        <h3 class="h4 text-primary-dark">Методика поиска уязвимостей в ПО</h3>
+                        <p class="text-muted"><time datetime="2026-02-10" class="text-primary">май 2025</time></p>
+                    </header>
+                    <details class="bg-light p-4 rounded-3">
+                        <summary class="fw-bold text-primary cursor-pointer fs-5 mb-2">Подробнее</summary>
+                        <div class="overflow-auto" style="max-height: 150px;">
+                            <p class="mb-0">Методика для поиска уязвимостей в ПО, написанном на нескольких языках программирования (С, С++, Java, Python, Go).</p>
+                        </div>
+                    </details>
+                    <footer class="mt-4 pt-3 border-top">
+                        <p class="text-muted mb-0">
+                            <strong>Авторы:</strong> Позин Б.А., Бородушкина П.А., Коротков Д.А., Федоров М.А., Муратов А.Ф.
+                        </p>
+                    </footer>
+                </article>
+            </div>
             
-            <aside style="background: linear-gradient(145deg, var(--gray-50), var(--white)); border-left: 8px solid var(--accent); padding: 24px; border-radius: var(--radius-lg); margin: 32px 0;">
-                <h4 style="color: var(--primary-dark); font-size: 1.2em; margin-bottom: 8px;">Интересный факт</h4>
-                <p style="font-size: 1.1em; margin-bottom: 0;">МИЭМ был основан в <time datetime="1962" style="background: var(--accent); color: var(--primary-dark); padding: 3px 12px; border-radius: var(--radius-full); font-weight: bold;">1962 году</time> как Московский институт электронного машиностроения.</p>
-            </aside>
+            <div class="col-12">
+                <aside class="bg-light p-4 rounded-4 border-start border-4 border-warning my-3">
+                    <h4 class="h5 text-primary-dark mb-2">Интересный факт</h4>
+                    <p class="lead fs-6 mb-0">
+                        МИЭМ был основан в <time datetime="1962" class="badge-accent badge rounded-pill">1962 году</time> 
+                        как Московский институт электронного машиностроения.
+                    </p>
+                </aside>
+            </div>
             
-            <div data-status="important" style="margin-top: 24px;">
-                <p style="margin: 0;">"Не для школы, но для жизни мы учимся."</p>
+            <div class="col-12">
+                <div data-status="important" class="p-3 rounded-3">
+                    <p class="mb-0 fw-bold">"Не для школы, но для жизни мы учимся."</p>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- Подвал -->
-    <footer style="background: linear-gradient(to right, var(--gray-900), var(--primary-dark)); color: var(--white); padding: 40px 32px; border-radius: var(--radius-lg) var(--radius-lg) 0 0; margin-top: 48px;">
-        <p style="font-size: 1.2em; color: var(--accent); margin-bottom: 20px;">© 2026 Бородушкина Полина. Студентка НИУ ВШЭ.</p>
-        <address style="background: rgba(255,255,255,0.1); border-left: 4px solid var(--accent); color: var(--gray-200); padding: 20px; border-radius: var(--radius-md); font-style: normal; margin-bottom: 20px;">
-            Контакты: <a href="mailto:borodushkina@edu.hse.ru" style="color: var(--accent); text-decoration: underline wavy;">borodushkina@edu.hse.ru</a><br>
-            Телефон: <a href="tel:+74991234567" style="color: var(--accent);">+7 (499) 123-45-67</a>
-        </address>
-        <p><small style="color: var(--gray-300);">Учебный проект. Демонстрация HTML и CSS.</small></p>
-        <p><a href="/" style="color: var(--primary-dark); background: var(--accent); padding: 12px 28px; border-radius: var(--radius-full); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 16px; transition: all 0.2s;">Вернуться на главную</a></p>
+    <footer class="bg-dark text-white py-5 px-4 rounded-top-4 mt-5" 
+            style="background: linear-gradient(to right, #0f172a, #0f2b5e) !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="fs-4 text-warning mb-4">© 2026 Бородушкина Полина. Студентка НИУ ВШЭ.</p>
+                    <address class="bg-white bg-opacity-10 p-4 rounded-4 border-start border-4 border-warning mb-4">
+                        Контакты: <a href="mailto:borodushkina@edu.hse.ru" class="text-warning text-decoration-underline-wavy">borodushkina@edu.hse.ru</a><br>
+                        Телефон: <a href="tel:+74991234567" class="text-warning">+7 (499) 123-45-67</a>
+                    </address>
+                    <p class="text-white-50 small">Учебный проект. Демонстрация HTML, CSS и Bootstrap.</p>
+                    <a href="/" class="btn btn-warning text-primary-dark fw-bold rounded-pill px-4 py-3 mt-3">
+                        Вернуться на главную
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
     
-    <p class="highlight-text" style="text-align: center; margin: 32px auto; font-size: 1.2em; display: table;">
-        Я - Студент ВШЭ
-    </p>
+    <div class="container my-4">
+        <p class="highlight-text text-center mx-auto fs-5" style="display: table;">
+            Я - Студент ВШЭ
+        </p>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Plotly диаграмма
+        var semesters = ['1-1', '1-2', '2-1', '2-2', '3-1', '3-2'];
+        var grades = [8.7, 8.9, 9.0, 9.1, 9.2, 9.3];
+        
+        var trace = {
+            x: semesters,
+            y: grades,
+            type: 'scatter',
+            mode: 'lines+markers',
+            marker: {color: '#1e3a8a', size: 10},
+            line: {color: '#fbbf24', width: 3}
+        };
+        
+        var layout = {
+            title: 'Рост успеваемости по семестрам',
+            xaxis: {title: 'Семестр'},
+            yaxis: {title: 'Средний балл', range: [8, 10]},
+            plot_bgcolor: '#f8fafc',
+            paper_bgcolor: '#ffffff'
+        };
+        
+        Plotly.newPlot('gradesChart', [trace], layout);
+    </script>
 </body>
 </html>
